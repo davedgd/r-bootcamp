@@ -1,0 +1,51 @@
+id,first_name,last_name,job_title,email,age,num_children,shirt_size,annual_salary,pay_type,satisfaction_score
+1001,Cobbie,Whinray,Account Executive,cwhinray0@icq.com,63,1,M,31124.56,FullTime,5
+1002,Milton,McPhaden,Recruiter,mmcphaden1@marriott.com,20,2,L,65875.74,FullTime,3
+1003,Coralyn,Haselhurst,Account Coordinator,chaselhurst2@icio.us,41,2,3XL,25548.53,FullTime,4
+1004,Morten,Samples,Account Representative IV,msamples3@toplist.cz,43,1,S,51447.79,PartTime,5
+1005,Norman,Munnis,Desktop Support Technician,nmunnis4@cargocollective.com,41,0,L,54961.71,PartTime,5
+1006,Cora,Barbary,Research Associate,cbarbary5@china.com.cn,61,1,XL,31398.06,PartTime,5
+1007,Stevie,O'Shirine,VP Accounting,soshirine6@foxnews.com,55,0,XS,65814.42,FullTime,3
+1008,Kynthia,Blaxley,Computer Systems Analyst IV,kblaxley7@goo.ne.jp,63,2,S,65262.16,PartTime,
+1009,Harmony,Kaysor,Chemical Engineer,,58,3,M,41974.19,PartTime,3
+1010,Levi,Elward,Staff Accountant II,lelward9@sitemeter.com,50,1,2XL,66769.71,FullTime,4
+1011,Hobard,Seyers,Executive Secretary,hseyersa@mlb.com,49,1,2XL,37632.39,PartTime,2
+1012,Roselle,Rideout,Paralegal,rrideoutb@bravesites.com,58,2,2XL,90149.96,FullTime,1
+1013,Brigitta,Ganny,Structural Engineer,bgannyc@oakley.com,65,1,3XL,25491.98,FullTime,1
+1014,Wilma,Yeo,Sales Associate,wyeod@techcrunch.com,30,0,3XL,27012.52,PartTime,4
+1015,Vlad,Parlett,Sales Representative,vparlette@t.co,39,0,3XL,24171.09,FullTime,3
+1016,Bernie,Senechell,Senior Editor,bsenechellf@walmart.com,64,0,2XL,60180.5,NA,5
+1017,Marline,Goodee,Programmer Analyst IV,mgoodeeg@blogtalkradio.com,24,2,L,61362.33,FullTime,1
+1018,Josselyn,Lumbley,Research Assistant III,,50,0,XL,76692.87,PartTime,5
+1019,Mandie,Donan,Research Assistant IV,mdonani@nytimes.com,31,0,M,64495.01,PartTime,4
+1020,Kassandra,Openshaw,Director of Sales,,24,1,2XL,56248.84,FullTime,3
+1021,Beryl,Shalloe,Health Coach I,bshalloek@twitter.com,60,3,XL,22387.88,PartTime,4
+1022,Terra,Gilliatt,Health Coach II,tgilliattl@businessweek.com,35,0,S,40816.42,FullTime,2
+1023,Carrol,Pochon,Professor,cpochonm@google.it,20,2,2XL,59710.47,PartTime,1
+1024,Harmony,Powley,Legal Assistant,,18,3,S,21668.06,FullTime,3
+1025,Seana,Haskins,Environmental Tech,shaskinso@drupal.org,43,1,XS,39609.89,FullTime,4
+1026,Pearce,Ygoe,Cost Accountant,pygoep@webnode.com,34,1,L,45988.08,PartTime,5
+1027,Dmitri,Mattisson,Administrative Officer,dmattissonq@nyu.edu,49,3,M,35535.96,PartTime,4
+1028,Ashton,Beaby,Developer I,abeabyr@imdb.com,23,0,XL,83948.68,FullTime,2
+1029,Allan,Stoffersen,Nurse,astoffersens@amazon.de,39,2,XS,47142.61,PartTime,
+1030,Stepha,Forth,Automation Specialist I,sfortht@thetimes.co.uk,63,0,S,78520.42,FullTime,2
+1031,Theobald,Crosbie,Project Manager,tcrosbieu@shinystat.com,40,3,3XL,81379.92,FullTime,3
+1032,Wash,Mechem,Operator,wmechemv@techcrunch.com,23,1,L,91838.16,FullTime,2
+1033,Scarlett,Laval,Human Resources Assistant II,slavalw@bandcamp.com,63,3,XS,84602.89,PartTime,4
+1034,Garwin,Farnish,Human Resources Assistant IV,gfarnishx@wufoo.com,53,0,L,83878.78,PartTime,5
+1035,Donna,Stollen,Media Manager IV,dstolleny@creativecommons.org,56,2,M,61861.03,FullTime,1
+1036,Aldous,Derill,Assistant Media Planner,aderillz@wired.com,36,0,M,52298.58,PartTime,3
+1037,Karola,Hadland,General Manager,khadland10@php.net,28,0,L,88994.74,FullTime,4
+1038,Paulie,Lunge,Senior Developer,plunge11@qq.com,36,2,L,20496.78,PartTime,5
+1039,Emmalee,Ferris,Geological Engineer,eferris12@google.it,57,3,XS,57157.43,PartTime,
+1040,Analise,Prichard,Junior Executive,aprichard13@wufoo.com,24,3,XL,49072.96,NA,3
+1041,Jeana,Mixer,GIS Technical Architect,jmixer14@csmonitor.com,53,3,S,22700.51,PartTime,1
+1042,Miner,Pascho,Registered Nurse,mpascho15@reddit.com,40,0,M,42017.65,PartTime,1
+1043,Sherlocke,Lammert,Financial Analyst,slammert16@rambler.ru,23,1,2XL,74965.35,PartTime,3
+1044,Harriett,German,Research Associate,hgerman17@ibm.com,19,3,XS,52513.35,PartTime,5
+1045,Nessa,McGaugey,Clinical Specialist,nmcgaugey18@salon.com,37,3,XL,49928.91,PartTime,3
+1046,Pammy,Berndsen,Cost Accountant,pberndsen19@vistaprint.com,44,2,XS,38783.31,FullTime,3
+1047,Tyne,Ostick,Assistant Media Planner,tostick1a@hibu.com,51,3,L,27754.88,PartTime,4
+1048,Timmie,Roffey,Programmer I,troffey1b@hatena.ne.jp,20,1,M,86393.21,PartTime,5
+1049,Shane,Lehon,Software Engineer IV,slehon1c@istockphoto.com,27,2,L,37648.58,PartTime,3
+1050,Bert,Feasley,Nurse Practicioner,,38,0,XL,21330.46,FullTime,2

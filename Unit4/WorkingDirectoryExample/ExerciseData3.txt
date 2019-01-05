@@ -1,0 +1,9 @@
+Some data files occasionally (and awkwardly) put a text description at the top, which will cause a problem when reading them into R. See the skip argument of read.table for a solution to this problem. In addition, be sure to use the correct quote specification for reading this file, since this one happens to be using backticks for strings.
+
+EmployeeID,FirstName,Age,PayType,NumChildren
+101,`Kim`,24,`Hourly`,0
+102,`Ken`,23,`Salaried`,2
+103,`Bob`,54,`Hourly`,1
+104,`Bill`,NA,`Hourly`,0
+105,`Cindy`,64,`Salaried`,3
+106,`Jamie`,56,`Hourly`,0
