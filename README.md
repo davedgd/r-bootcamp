@@ -34,7 +34,7 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 -	Plotting with lattice
 -	Plotting with ggplot2
 ### Misc:
--	Monty Hall: A Simulation-Based Example of how to Write a Function
+-	Monty Hall: A Simulation-Based Example of How to Write a Function
 ### To-Do (Work-in-Progress):
 -	If/else statements, for/while loops (Misc?)
 -	Creating a report (add to Unit 1)
