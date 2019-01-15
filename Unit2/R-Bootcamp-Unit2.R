@@ -207,21 +207,21 @@ var1 / 2
 
 # If you define several R objects, a command may be composed entirely of objects and no literal values:
 
-var2 <- 50
+var2 <- 10
 var3 <- 5
 
 var2/var3
 
 # Values held inside R objects can be updated via reassignment:
 
-var2          # var2 is currently 50
-var2 <- 500   # var2 is now 500
+var2          # var2 is currently 10
+var2 <- 50    # var2 is now 50
 
 # Values held within R objects can also be copied into other R objects:
 
-var2 # 500
+var2 # 50
 var2copy <- var2
-var2copy # also 500
+var2copy # also 50
 
 identical(var2, var2copy) # the aptly-named identical function can be used to check if two objects are identical
 
