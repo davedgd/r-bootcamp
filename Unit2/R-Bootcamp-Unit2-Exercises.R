@@ -1,6 +1,5 @@
 # +++++++++++++++++++++++++
 # +++ R BOOTCAMP UNIT 2 +++
-# +++    PART 1 OF 2    +++
 # +++     EXERCISES     +++
 # +++++++++++++++++++++++++
 # + AUTHOR: David Dobolyi +
