@@ -199,7 +199,7 @@ list.files()
 
 # A common point regarding working directories is that you may have subdirectories within a particular working directory. For instance, assuming your working directory is "~/Documents/ResearchProject", this folder may have a data subdirectory like "~/Documents/ResearchProject/Data", and this folder may in turn contain a data file you would like to load (e.g., "~/Documents/ResearchProject/Data/ExampleData.csv"). This example brings up an important aspect of working directories, which are relative paths. Relative paths allow you to specify the location of a file or folder relative to your working directory.
 
-# To see how this works, unzip "R-Bootcamp-Unit3-Data.zip" (i.e., do not simply open/browse it) and then set your working directory to the folder "WorkingDirectoryExample":
+# To see how this works, unzip "R-Bootcamp-Unit4-Data.zip" (i.e., do not simply open/browse it) and then set your working directory to the folder "WorkingDirectoryExample":
 
 # setwd("~/Downloads/WorkingDirectoryExample")
 
