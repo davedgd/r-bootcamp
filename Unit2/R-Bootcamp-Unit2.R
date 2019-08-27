@@ -53,9 +53,9 @@ is.logical(is.numeric("2")) # the result of is.numeric("2") is FALSE; as such, i
 
 # Moreover, R provides a set of functions to check the type of data you are working with such as:
 
-typeof(2) # numeric is also referred to as double/real; see ?is.numeric
-class(2)
 str(2)
+class(2)
+typeof(2) # numeric is also referred to as double/real; see ?is.numeric
 
 # As shown with the typeof(2) example, you may need to gain a deeper understanding of some R data types to fully understand the output of these functions.
 
@@ -165,12 +165,12 @@ tolower("OR MAKE IT ALL LOWERCASE WITH tolower")
 NA
 is.na(NA)
 is.nan(NA)
-typeof(NA)
+str(NA)
 
 NaN
 is.na(NaN)
 is.nan(NaN)
-typeof(NaN)
+str(NaN)
 
 # Missing data is a common occurrence when working with real-world data problems and a topic we will see again later when working with various statistical functions. Note that having NA values involved in calculations will typically result in an NA being returned in the result:
 
@@ -248,9 +248,9 @@ var4        # 10 (integer)
 
 # R allows you to store any type of data into an object, meaning you are not limited to numeric data types:
 
-typeof(var4)
+str(var4)
 (var4 <- "var4 is now a string")
-typeof(var4)
+str(var4)
 
 # Note that changing var4 to a character object means it can no longer be used for arithmetic (e.g., the command 3+var4 would cause an error because you cannot add a numeric value [3] to a non-numeric object [var4, assuming it contains a string]).
 

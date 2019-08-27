@@ -22,12 +22,12 @@
 # list of packages by name: https://cran.r-project.org/web/packages/available_packages_by_name.html
 # list of packages by task views: https://cran.r-project.org/web/views/
 
-# To install a package in R, you have two options once you know the package's name:
+# To install a particular package in R, you have two options once you know the package's name:
 
 # A) interactively in RStudio: Tools -> Install Packages...
 # B) using the install.packages function
 
-# It's up to you to decide how to install a package ultimately, but in terms of best practices, you should endeavour to use R functions whenever possible. That being said, there is one key point about R packages to be aware of: namely, package installation only needs to happen once per R installation. In other words, once you have installed an R package, it will stay installed for a particular version of R (e.g., R 3.5) and you will not need to install it again. In fact, it is important to avoid reinstalling packages if possible, since the process can take some time to complete and can also cause warnings from RStudio if trying to reinstall packages that are already in use in your R session.
+# Besides these methods, RStudio 1.2 (and up) will conveniently also offer to install some packages for you automatically if they are referenced in your script but not yet installed on your system. Ultimately, it's up to you to decide how to install your packages, but the install.packages function is indispensible since the other methods depend on it. There is one key point about R packages to be fully aware of however: namely, package installation only needs to happen once per R installation. In other words, once you have installed an R package, it will stay installed for a particular major version of R (e.g., R 3.6, which includes 3.6.0, 3.6.1, etc.) and you will not need to install it again. In fact, it is important to avoid reinstalling packages if possible, since the process can take some time to complete and can also cause warnings from RStudio if trying to reinstall packages that are already in use in your R session.
 
 # Let's install our first few packages, which we will use later in this script to load data files from various file sources. The packages we want to install include "foreign", "readr", and "haven"; we can install all of these packages at once using the install.packages command, which takes a vector of one or more package names you want to install:
 
@@ -330,7 +330,7 @@ excel_sheets("Data Files/ExampleData.xlsx") # this file only has one sheet
 
 library(foreign)
 
-SAV_foreign_example <- read.spss("Data Files/ExampleData.sav", to.data.frame = TRUE)
+SAV_foreign_example <- read.spss("Data Files/ExampleData.sav", to.data.frame = TRUE) # note that if you see a message such as "re-encoding from UTF-8" after running read.spss, you can usually safely ignore it
 head(SAV_foreign_example)
 
 # Use of this function is generally straightforward, although be sure to set the to.data.frame argument to TRUE if you want the data imported as a data.frame object. It's worth mentioning the use.value.labels argument, which can be helpful for reading in nominal (factor) columns as integer values directly instead of as SPSS value labels:
@@ -345,7 +345,7 @@ SAV_foreign_example_alt$satisfaction_score # actual values from SAV_foreign_exam
 
 attr(SAV_foreign_example, "variable.labels")
 
-# Finally, as an alternative, you can use the read_sav (aka read_spss) function in the haven package to read in SPSS files:
+# Finally, as an alternative to read.spss in foreign, you can use the read_sav (aka read_spss) function in the haven package to read in SPSS files:
 
 library(haven)
 help(package = "haven") # see a list of functions in haven

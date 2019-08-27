@@ -31,11 +31,9 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 ### Unit 6:
 -	Basic (base) plotting
 -	Saving plots to disk
--	Plotting with lattice
 -	Plotting with ggplot2
+-	Plotting with lattice
 ### Misc:
 -	Monty Hall: A Simulation-Based Example of How to Write a Function
 ### To-Do (Work-in-Progress):
--	If/else statements, for/while loops (Misc?)
--	Creating a report (add to Unit 1)
-- GitHub integration
+-   GitHub integration

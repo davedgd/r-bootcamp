@@ -8,8 +8,8 @@
 
 # - Basic (base) plotting
 # - Saving plots to disk
-# - Plotting with lattice
 # - Plotting with ggplot2
+# - Plotting with lattice
 
 # +++++++++++++++++++++++++
 # + Basic (base) Plotting +
@@ -172,7 +172,7 @@ library(ggplot2)
 
 # Similar to dplyr, ggplot2 makes the language of plotting in R more consistent, with functions that can be used to tweak plots working similarly regardless of the type of plot in question (e.g., scatterplot vs. boxplot; these different types are referred to as geoms in the language of ggplot2).
 
-# Rather than including a full description and tutorial for ggplot2 within this bootcamp unit, I will provide code that recreates the bulk of the R plot examples above via ggplot2 geoms and then also provide links to relevant ggplot2 tutorials (e.g., see "Learning ggplot2" at the official package page: https://ggplot2.tidyverse.org/). I will also provide a supplementary example of a ggplot2-based analysis via an R script named R-Bootcamp-Unit5-ExampleScript.R as part of this unit.
+# Rather than including a full description and tutorial for ggplot2 within this bootcamp unit, I will provide code that recreates the bulk of the R plot examples above via ggplot2 geoms and then also provide links to relevant ggplot2 tutorials (e.g., see "Learning ggplot2" at the official package page: https://ggplot2.tidyverse.org/). I will also provide a supplementary example of a ggplot2-based analysis via an R script named R-Bootcamp-Unit6-ExampleScript.R as part of this unit.
 
 # Since the examples provided below are only a tiny subset of what ggplot2 offers, use the following help command to get a more complete sense of what ggplot2 offers:
 

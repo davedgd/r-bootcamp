@@ -174,7 +174,9 @@ xx <- -9:9
 plot(xx, sqrt(abs(xx)),  col = "red")
 lines(spline(xx, sqrt(abs(xx)), n=101), col = "pink")
 
-# The most useful aspect of help files however is typically the list of arguments, shown under the "Arguments" subheading. Notice that for sqrt, only a single argument is listed: x (a numeric or complex vector or array). Technically, this means that sqrt could be called more precisely via:
+# The most useful aspect of help files however is typically the list of arguments, shown under the "Arguments" subheading. Arguments are used to control what a function does; some arguments may be mandatory, while others may be optional or have default setting values.
+
+# Because arguments are so fundamental when working with functions, you can also preview them in RStudio by hovering your mouse cursor over a function name to see what arguments are required/available. Notice that for sqrt, only a single argument is listed: x (a numeric or complex vector or array). Technically, this means that sqrt could be called precisely via:
 
 sqrt(x = 25)
 
@@ -186,7 +188,7 @@ sqrt(25) # equivalent to sqrt(x = 25)
 
 ?log
 
-# Notice how for the second argument, base, a default value of exp(1) is specified in the help file; this means that by default, R will assume you want to use a base of exp(1) (i.e., e) when calling the log function, which is equivalent to a natural log. Thus, all of the following commands return an identical result:
+# Notice how for the second argument, base, a default value of exp(1) is indicated in the help file; this means that by default, R will assume you want to use a base of exp(1) (i.e., e) when calling the log function, which is equivalent to a natural log. Thus, all of the following commands return an identical result:
 
 log(100)
 log(100, base = exp(1))
@@ -210,6 +212,8 @@ log(exp(1), 100) # this call could lead to a big mistake
 # Regardless of how you specify them, arguments are extremely useful. For example, by changing the base of the log function, you can use it for multiple purposes. For example, to calculate a 10-based log rather than the natural log, you could use the following command:
 
 log(100, base = 10) # equivalent to log10(100)
+
+# Whenever you encounter a new function, be sure to familiarize yourself with its arguments so you fully understand how it works and what possibilities it provides.
 
 # ------------------
 # Help for Operators
