@@ -68,4 +68,3 @@ sqrt(30)
 # Add an argument to the log function below so that it returns a result of 2:
  
 log(100, base = 10)
- 

@@ -41,7 +41,7 @@ dim(ExDat2)
 # Exercise 3
 # ----------
 
-# Use the identical function to show ExDat1 and ExDat2 are identical (if they are not, amend your data import code accordingly).
+# Use the identical function (i.e., see ?identical) to show ExDat1 and ExDat2 are identical (if they are not, amend your data import code accordingly).
 
 identical(ExDat1, ExDat2)
 
