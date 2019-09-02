@@ -63,7 +63,7 @@
 
 # Second, the Console provides a history of executed commands that can be accessed using the keyboard. To see this history, click inside the Console to activate it. Notice that the cursor will become solid black and begin to blink when you click within either the Source or Console panes, respectively, depending on where you want to input code (i.e., you can switch between them as needed). To see the history, use the up and down arrow keys on the keyboard. Although you should typically avoid entering code directly in the Console and use the Source pane instead (i.e., so you have a permanent history of your work), this history feature can still be useful on occasion (as an aside, you can also see your history via the History tab in the top right pane).
 
-# Third, you can use find and/or find and replace functionality to quickly make multiple changes throughout a script file, similar to office applications such as MS Word. You can access find and replace via the Edit menu (Edit -> Find...). A useful aspect of find and replace is the ability to use the "In selection" checkbox to match instances only within highlighted code as opposed to the entire script
+# Third, you can use find and/or find and replace functionality to quickly make multiple changes throughout a script file, similar to office applications such as MS Word. You can access find and replace via the Edit menu (Edit -> Find...). A useful aspect of find and replace is the ability to use the "In selection" checkbox to match instances only within highlighted code as opposed to the entire script.
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # + ARITHMETIC OPERATORS AND MATHEMATICAL FUNCTIONS IN R +
