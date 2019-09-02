@@ -3,7 +3,7 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 
 ## Table of Contents
 
-### Unit 1 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit2/R-Bootcamp-Unit1.R?raw=true), [Exercise](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit1/R-Bootcamp-Unit1-Exercises.R?raw=true), [Solution](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit1/Solutions/R-Bootcamp-Unit1-Exercise-Solutions.R?raw=true)):
+### Unit 1 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit1/R-Bootcamp-Unit1.R?raw=true), [Exercise](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit1/R-Bootcamp-Unit1-Exercises.R?raw=true), [Solution](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit1/Solutions/R-Bootcamp-Unit1-Exercise-Solutions.R?raw=true)):
 -	Installing R and RStudio
 -	The RStudio interface
 -	Arithmetic operators and mathematical functions
@@ -21,14 +21,14 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 -	Reading data files
 -	Writing data files
 -	Other ways to access data
-### Unit 5 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit5/R-Bootcamp-Unit5.R?raw=true), [Exercise](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit5/R-Bootcamp-Unit5-Exercises.R?raw=true)):
+### Unit 5 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit5/R-Bootcamp-Unit5.R?raw=true)):
 -	Descriptives
 -	Subsetting
 -	Merging
 -	Logical operators
 -	Data manipulation
 -	Data restructuring
-### Unit 6 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit6/R-Bootcamp-Unit6.R?raw=true), [Exercise](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit6/R-Bootcamp-Unit6-Exercises.R?raw=true)):
+### Unit 6 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit6/R-Bootcamp-Unit6.R?raw=true)):
 -	Basic (base) plotting
 -	Saving plots to disk
 -	Plotting with ggplot2
