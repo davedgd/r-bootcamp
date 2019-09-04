@@ -27,7 +27,7 @@
 
 7 / 8
 
-# find the remainder of 13 divided by 5 as an integer
+# find the remainder of 13 divided by 5 as a whole number
 
 13 %% 5
 
@@ -49,7 +49,7 @@ sqrt(30)
 
 # determine how many times 14 can be divided by 3 sans remainder
 
-13 %/% 3
+14 %/% 3
 
 # ----------
 # Exercise 2
