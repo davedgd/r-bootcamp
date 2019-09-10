@@ -260,11 +260,11 @@ ls()
 rm(var2)
 ls()
 
-# You can also remove all objects using the following command:
+# Or you can remove all objects at once using the following command:
 
 rm(list = ls())
 
-# Alternatively, this can be done using Session -> Clear Workspace... in the RStudio menu.
+# Alternatively, you can remove all objects via Session -> Clear Workspace... in the RStudio menus.
 
 # ------------------------------
 # Side Note: Errors and Warnings
