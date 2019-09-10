@@ -254,11 +254,17 @@ str(var4)
 
 # Note that changing var4 to a character object means it can no longer be used for arithmetic (e.g., the command 3+var4 would cause an error because you cannot add a numeric value [3] to a non-numeric object [var4, assuming it contains a string]).
 
-# Finally, you can remove objects from the R environment if desired using the rm function:
+# Finally, you can remove individual objects from the R environment if desired using the rm function:
 
 ls()
 rm(var2)
 ls()
+
+# You can also remove all objects using the following command:
+
+rm(list = ls())
+
+# Alternatively, this can be done using Session -> Clear Workspace... in the RStudio menu.
 
 # ------------------------------
 # Side Note: Errors and Warnings
