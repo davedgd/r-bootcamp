@@ -36,4 +36,5 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 ### Misc ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Misc/R-Bootcamp-Misc-MontyHall.R?raw=true)):
 -	Monty Hall: A Simulation-Based Example of How to Write a Function
 ### To-Do (Work-in-Progress):
--   GitHub integration
+- GitHub integration
+- Add information regarding date/datetime data types
