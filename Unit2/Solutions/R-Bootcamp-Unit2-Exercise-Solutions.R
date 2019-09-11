@@ -25,13 +25,13 @@ varG <- 2 * varC
 
 # Show the data type for each of the variables above using the typeof, class, or str function(s).
 
-type(varA) # numeric
-type(varB) # character
-type(varC) # logical
-type(varD) # integer
-type(varE) # numeric
-type(varF) # numeric
-type(varG) # numeric
+typeof(varA) # numeric
+typeof(varB) # character
+typeof(varC) # logical
+typeof(varD) # integer
+typeof(varE) # numeric
+typeof(varF) # numeric
+typeof(varG) # numeric
 
 # ----------
 # Exercise 2
