@@ -41,3 +41,4 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 - Add more (i.e., beyond Misc) on control-flow constructs (i.e., ?Control; if/else, for/while/repeat loops, etc.)
 - Debugging
 - Python integration via reticulate
+- Add basic string search/regular expressions
