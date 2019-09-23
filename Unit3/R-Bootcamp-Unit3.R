@@ -7,6 +7,7 @@
 # -- KEY CONCEPTS --
 
 # - R data structures
+# - R date and date-time classes
 
 # +++++++++++++++++++++
 # + R DATA STRUCTURES +
@@ -579,3 +580,119 @@ list2Copy$Element1 <- NULL
 list2Copy[[1]] <- NULL
 list2Copy # after (again, notice how the list indexing has been reset for unnamed elements; in other words, what was [[3]] initially is now [[1]])
 identical(list2Copy[[1]], list2[[3]])
+
+# ++++++++++++++++++++++++++++++++
+# + R DATE AND DATE-TIME CLASSES +
+# ++++++++++++++++++++++++++++++++
+
+# Now that we have covered the key R data types and structures, it is worth discussing one additional form of data commonly encountered in R: calendar dates and times.
+
+# R provides several classes for working with dates and times, and the simplest of these is the Date class:
+
+?Date
+
+# The Date class is useful for working with calendar dates. For example, to see the current date in R, we can use the Sys.Date() function to generate it:
+
+Sys.Date()
+
+# Running this function will display the current local date in a standardized year, month, day format (i.e., ISO 8601). While the output of this function may look like a simple character string, it is actually in the Date format, as shown via str:
+
+str(Sys.Date())
+
+# Compared to a string, a Date object provides significantly more information and functionality. For example, R provides various functions to extract parts of a Date object:
+
+weekdays(Sys.Date())
+months(Sys.Date())
+quarters(Sys.Date())
+
+# Moreover, as shown in the examples in ?Date, dates can be displayed in various ways using the format function:
+
+(today <- Sys.Date())
+format(today, "%d %b %Y") # two digit day of month, abbreviated month name, four digit year
+
+# The formatting of a date is highly customizable (for additional formatting options, see the details section of ?strptime):
+
+format(today, "%A, %B %d, %y") # full weekday name, full month name, two digit day, two digit year
+
+# Dates represent much more than strings however, since they can be used for calculations. For example, to determine the date 3 days from now, you can simply add 3L to today's date:
+
+Sys.Date() + 3
+
+# Moreover, we can also calculation the distance between two dates using some basic algebra. First, let's define dates beyond just today's date. To accomplish this, we can use R's as.Date conversion function, which expects dates to be formatted as four digit year, two digit month, and two digit day:
+
+date1 <- as.Date("2019-09-10")
+date2 <- as.Date("2019/09/15") # note we can use / in place of - when defining a date
+
+# To calculate the time difference between these two dates, we can simply subtract them:
+
+date2 - date1
+
+# Finally, we can use logical operators to test dates as well. For example:
+
+date1 > date2
+date1 + 10 > date2
+
+# ---------
+# Date Time
+# ---------
+
+# In addition to dates, R also provides classes for dealing with date-time data. For example, to see the current date and time, we can use the Sys.time function:
+
+Sys.time()
+
+# This function will provide the current date -- similar to Sys.Date() -- as well as the current time in a 24 hour format (i.e., military time). Unlike simple dates, date-times provide information on both the date and the time, including additional formatting options:
+
+format(Sys.time(), "%d %b %Y")    # just the date
+format(Sys.time(), "%d %b %Y %T") # date and time (24 hour format)
+format(Sys.time(), "%d %b %Y %r") # date and time (12 hour format with am/pm)
+
+# Somewhat confusingly, date-time classes in R consist of two variants: POSIXct and POSIXlt, with the latter being designed to simplify use in data.frame objects. Practically speaking, you can typically use either format to define date-times. To create a date-time object in R, use the as.POSIXct or as.POSIXlt functions; for instance:
+
+as.POSIXct("2019-09-01 12:30:45") # September 1, 2019; 30 minutes and 45 seconds past noon
+as.POSIXlt("2019-09-01 12:30:45") # same as above
+
+# More importantly, note that times in R by default are defined on a 24 hour clock. Therefore, care should be taken to avoid mistakes regarding AM vs. PM times:
+
+format(as.POSIXct("2019-09-01 01:30:00"), "%F %T %r") # 1:30 AM
+format(as.POSIXct("2019-09-01 13:30:00"), "%F %T %r") # 1:30 PM
+
+# Moreover, note that time zone matters when working with both dates and date-times. By default, R will assume dates and date-times are being specified in your system's current time zone (e.g., EDT, or Eastern Daylight Time):
+
+(time3 <- as.POSIXct("2019-09-01 12:00:00")) # default time zone for your system (e.g., EDT, or eastern daylight time)
+format(time3, "%F %T %Z (%z)") # showing time zone and offset relative to coordinated universal time (UTC)
+
+# You can specify an alternate time zone for a date using the tz argument:
+
+(time4 <- as.POSIXct("2019-09-01 12:30:45", tz = "UTC")) # specify in UTC time
+
+# Using the attributes function, it is possible to inspect the time zone of a date-time object:
+
+attributes(time4)
+
+# Using this function, it's also possible to adjust the time zone to something else:
+
+attributes(time4)$tzone <- "EST5EDT" # note: EST5EDT is the formal representation for eastern standard time that complies with daylight savings (i.e., eastern daylight time)
+time4
+
+# Besides the issue of time zone, date-times work similarly to dates and can also be used in calculations. For example:
+
+time5 <- as.POSIXct("2019-09-01 12:30:45", tz = "UTC")
+time6 <- as.POSIXct("2019-09-01 08:30:45", tz = "UTC")
+
+time6 - time5
+
+# Finally, note that it is important to pay strict attention to time zones to avoid potential mistakes. For example, the following two times may appear different (i.e., several hours apart):
+
+time7 <- as.POSIXct("2019-09-01 12:30:45", tz = "UTC")
+time8 <- as.POSIXct("2019-09-01 08:30:45", tz = "EST5EDT")
+
+# Nevertheless, they are actually represent the same time if time zone is taken into account:
+
+time8 - time7
+
+# ------------------------------------------------------------
+# Side Note: Time Zones, Daylight Savings Time, and Leap Years
+# ------------------------------------------------------------
+
+# Various aspects of time including time zones, daylight savings time, and leap years can add significant complexity to working with dates that extend over long periods or when data comes from across the globe. For cases such as these, take a look at the lubridate and anytime packages, which can significantly simplify work involving with dates/times, thereby helping to avoid basic mistakes. The following unit provides details on how to work with packages in R.
+

@@ -322,6 +322,12 @@ head(XSLX_readxl_example)
 help(package = "readxl") # see a list of functions in readxl
 excel_sheets("Data Files/ExampleData.xlsx") # this file only has one sheet
 
+# Finally, note that when importing data from Excel, you may find dates that appear as integers in R (e.g., 43800). The reason for this is that Excel stores dates as number of days from an arbitrary origin around 1900-01-01 (see the examples in ?as.Date for a discussion on this). To convert these values to dates in R, you can use the as.Date function and adjust the origin argument accordingly; for example:
+
+as.Date(43800, origin = "1899-12-30") # "2019-12-01"; note the exact origin date depends on the operating system you are using as per http://support.microsoft.com/kb/214330
+
+# Alternatively, you can use the excel_numeric_to_date function in the janitor package to help with Excel date conversion.
+
 # --------------------
 # SAV (foreign, haven)
 # --------------------
