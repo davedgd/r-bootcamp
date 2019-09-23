@@ -14,7 +14,6 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 -	R objects and assignment operators
 ### Unit 3 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit3/R-Bootcamp-Unit3.R?raw=true), [Exercise](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit3/R-Bootcamp-Unit3-Exercises.R?raw=true), [Solution](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit3/Solutions/R-Bootcamp-Unit3-Exercise-Solutions.R?raw=true)):
 -	R data structures
--   R date and date-time classes
 ### Unit 4 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit4/R-Bootcamp-Unit4.R?raw=true), [Exercise](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit4/R-Bootcamp-Unit4-Exercises.R?raw=true), [Solution](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit4/Solutions/R-Bootcamp-Unit4-Exercise-Solutions.R?raw=true)):
 -	R packages
 -	Understanding file paths
@@ -37,6 +36,7 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 ### Misc ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Misc/R-Bootcamp-Misc-MontyHall.R?raw=true)):
 -	Monty Hall: A Simulation-Based Example of How to Write a Function
 ### To-Do (Work-in-Progress):
+- Add info on date/datetime data to Unit 3
 - Update spread/gather in Unit 5 to newer tidyr 1.0.0 functions: pivot_wider/pivot_longer
 - Add more (i.e., beyond Misc) on control-flow constructs (i.e., ?Control; if/else, for/while/repeat loops, etc.)
 - Debugging
