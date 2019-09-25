@@ -59,11 +59,20 @@ worstDepartures$MonthFloor <- floor_date(worstDepartures$YearMonthDay, unit = "m
 
 # generate plot
 
-p1 <- ggplot(worstDepartures, aes(x = MonthFloor, y = ..count.., fill = ..count..)) + geom_bar(stat = "count")
+p1 <- ggplot(worstDepartures, aes(x = MonthFloor, y = ..count.., fill = ..count..)) + 
+  geom_bar(stat = "count")
 
 # further modify existing plot
 
-p2 <- p1 + theme_bw(base_size = 18) + scale_y_continuous(breaks=seq(0, 10, by = 2)) + scale_x_date(date_breaks = "1 months", date_labels = "%b") + scale_fill_gradient(low = "grey", high = "red") + ggtitle("Months with Highly Delayed Flights in NYC During 2013") + xlab("Month") + ylab("Number of Highly Delayed Flights") + guides(fill = FALSE) # for more on date_labels, see https://www.stat.berkeley.edu/~s133/dates.html
+p2 <- p1 + 
+  theme_bw(base_size = 18) + 
+  scale_y_continuous(breaks=seq(0, 10, by = 2)) + 
+  scale_x_date(date_breaks = "1 months", date_labels = "%b") + # for more on date_labels, see Unit 3 and/or https://www.stat.berkeley.edu/~s133/dates.html
+  scale_fill_gradient(low = "grey", high = "red") + 
+  labs(title = "Months with Highly Delayed Flights in NYC During 2013",
+       x = "Month",
+       y = "Number of Highly Delayed Flights") + 
+  guides(fill = FALSE)
 
 # view plots individually
 
@@ -76,7 +85,7 @@ grid.arrange(p1, p2, ncol = 1)
 
 # save plot to disk
 
-ggsave("WorstDepartureMonths.pdf", width = 8, height = 5)
+ggsave("WorstDepartureMonths.pdf", width = 10, height = 5)
 
 # ------------------
 # Follow-Up Analysis
