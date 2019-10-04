@@ -15,7 +15,7 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 ### Unit 3 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit3/R-Bootcamp-Unit3.R?raw=true), [Exercise](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit3/R-Bootcamp-Unit3-Exercises.R?raw=true), [Solution](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit3/Solutions/R-Bootcamp-Unit3-Exercise-Solutions.R?raw=true)):
 -	R data structures
 -   R date and date-time classes
-### Unit 4 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit4/R-Bootcamp-Unit4.R?raw=true), [Exercise](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit4/R-Bootcamp-Unit4-Exercises.R?raw=true), [Solution](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit4/Solutions/R-Bootcamp-Unit4-Exercise-Solutions.R?raw=true)):
+### Unit 4 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit4/R-Bootcamp-Unit4.R?raw=true), [Data](https://github.com/davedgd/r-bootcamp/raw/master/Unit4/R-Bootcamp-Unit4-Data.zip), [Exercise](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit4/R-Bootcamp-Unit4-Exercises.R?raw=true), [Solution](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit4/Solutions/R-Bootcamp-Unit4-Exercise-Solutions.R?raw=true)):
 -	R packages
 -	Understanding file paths
 -	The working directory
@@ -29,7 +29,7 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 -	Logical operators
 -	Data manipulation
 -	Data restructuring
-### Unit 6 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit6/R-Bootcamp-Unit6.R?raw=true)):
+### Unit 6 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit6/R-Bootcamp-Unit6.R?raw=true), [Example](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit6/R-Bootcamp-Unit6-Example.R?raw=true)):
 -	Basic (base) plotting
 -	Saving plots to disk
 -	Plotting with ggplot2
