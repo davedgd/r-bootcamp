@@ -32,7 +32,7 @@ library(scales)
 outersect <- function(x, y) {
   sort(c(setdiff(x, y),
          setdiff(y, x)))
-  }
+}
 
 # ------------------------------
 # Monty Hall Simulation Function
@@ -72,30 +72,30 @@ montyHall <- function(decision = "stay", iterations = 10000, seed = 123) {
     
     # determine the result (i.e., win or lose)
     theResult[i] <- ifelse(theDoors[theFinalChoice] == "Prize", "Win", "Lose")
-  
+    
   }
   
   # calculate the proportion of wins
   winProp <- sum(theResult == "Win") / length(theResult)
   
   # print the win percentage to the console
-  cat("Proportion of Wins: ", winProp * 100, "% (", decision, ")\n", sep = "")
+  message("Proportion of Wins: ", winProp * 100, "% (", decision, ")\n", sep = "")
   
   # return results
   return(
     list(
       WinProp = winProp,
       SimulationResults = theResult
-      )
     )
+  )
   
-  }
+}
 
 # --------------------------------------
 # Run the Simulation for Stay vs. Switch
 # --------------------------------------
 
-stayResults   <- montyHall(decision = "stay", iterations = 10000)
+stayResults   <- montyHall(decision = "stay",   iterations = 10000)
 switchResults <- montyHall(decision = "switch", iterations = 10000)
 
 # ----------------
@@ -107,8 +107,8 @@ switchResults <- montyHall(decision = "switch", iterations = 10000)
 overallResults <- data.frame(
   Decision = c(rep("Stay",   length(stayResults$SimulationResults)), 
                rep("Switch", length(switchResults$SimulationResults))),
-  Outcome = c(  stayResults$SimulationResults,
-              switchResults$SimulationResults)
+  Outcome  = c(stayResults$SimulationResults,
+               switchResults$SimulationResults)
 )
 
 head(overallResults)
@@ -127,13 +127,13 @@ plotDat <- overallResults %>%
 head(plotDat)
 
 ggplot(plotDat, aes(x = Decision, y = Percent, fill = Outcome)) + 
-  geom_bar(stat = "identity") + 
-  geom_text(aes(label = paste0(sprintf("%1.1f", Percent * 100), "%")), position = position_stack(vjust = 0.5)) + 
+  geom_bar(stat = "identity", color = "black", size = 2) + 
+  geom_text(aes(label = paste0(sprintf("%1.1f", Percent * 100), "%")), position = position_stack(vjust = 0.5), color = "white", fontface = "bold", size = 8) + 
   scale_y_continuous(labels = percent) + 
   ylab("Percentage of Trials") + 
   theme_bw(base_size = 20) + 
   labs(title = "Monty Hall Simulation Results",
-       caption = paste("Total Trials: ", nrow(overallResults), " (", nrow(filter(overallResults, Decision == "Stay")), " Stay and ", nrow(filter(overallResults, Decision == "Switch")), " Switch)", sep = "")) + 
+       caption = paste0("Total Trials: ", nrow(overallResults), " (", nrow(filter(overallResults, Decision == "Stay")), " Stay and ", nrow(filter(overallResults, Decision == "Switch")), " Switch)")) + 
   theme(plot.caption = element_text(hjust = 0.5))
 
 # To understand this code (e.g., percentage labels using geom_text), see: https://stackoverflow.com/questions/37817809/r-ggplot-stacked-bar-chart-with-counts-on-y-axis-but-percentage-as-label
