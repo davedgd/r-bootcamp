@@ -212,7 +212,7 @@ as.integer(phoneType)
 
 # In general, it is very important to use meaningful labels when working with factors. Level names consisting exclusively of numbers can also cause confusion. For instance, consider this odd example:
 
-weirdFactor <- factor(c(3, 1, 2, 2, 3, 3), levels = c(3, 1, 2))
+(weirdFactor <- factor(c(3, 1, 2, 2, 3, 3), levels = c(3, 1, 2)))
 as.character(weirdFactor) # label names
 as.integer(weirdFactor) # notice how the label "1" corresponds to the value of 3, which is counter intuitive; as.integer does not turn the initial numeric values specified in the call to factor, since those become labels
 
