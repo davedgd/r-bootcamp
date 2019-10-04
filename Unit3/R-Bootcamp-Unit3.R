@@ -351,7 +351,7 @@ employeeData[3, "FirstName"]
 employeeData[3, 2]
 employeeData[, "FirstName"][3]
 employeeData[, 2][3]
-employeeData[3,][, "FirstName"] # you should probably avoid this one, but it is possible...
+employeeData[3, ][, "FirstName"] # you should probably avoid this one, but it is possible...
 
 # Ultimately, it's up to you to decide how best to make references to data.frame objects, but clarity should always be the goal (e.g., the first or second option above are potentially clearer than many of the others). As a general rule, it is best to refer to columns by name however, since column order is essentially arbitrary, thereby making references by column number potentially unreliable/hazardous. For example, consider a variation on the existing data.frame employeeData that rearranges the column order:
 
