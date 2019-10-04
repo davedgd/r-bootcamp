@@ -104,7 +104,7 @@ mean(iris[iris$Species == "setosa", "Petal.Length"])
 mean(iris[iris$Species == "versicolor", "Petal.Length"])
 mean(iris[iris$Species == "virginica", "Petal.Length"])
 
-# Alternatively, if we wanted we could also generate three separate data frames for each species:
+# Alternatively, if we wanted we could also generate three separate data.frame objects with one for each species:
 
 irisSetosa     <- iris[iris$Species == "setosa",]
 irisVersicolor <- iris[iris$Species == "versicolor",]
@@ -418,18 +418,27 @@ library(dplyr)
 
 # Once dplyr is loaded, suppose we wanted to calculate means and SDs for the petal length and petal width columns of iris for each of the species in the data.frame. To do this, we could use the following command:
 
-iris %>% 
+irisDescriptives <- iris %>% 
   group_by(Species) %>% 
   summarise(mean_petal_length = mean(Petal.Length), 
             sd_petal_length = sd(Petal.Length)) %>%
   arrange(desc(mean_petal_length))
 
-# When working with dplyr, commands involves steps/stages, which are separated by a new operator known as the pipe operator (i.e., %>%). The command above consists of the following steps:
+irisDescriptives
+
+# The result shows the means and standard deviations of petal length for each of the three species sorted from longest (i.e., virginica) to shortest (i.e., setosa). More specifically, the output is returned as a data.frame, albeit one that looks slightly different from what we've seen before. Specifically, dplyr functions produce tibble output, and tibbles are essentially data.frame-like objects with nicer output formatting and other interesting features. For more details, see:
+
+?tibble::tibble
+str(irisDescriptives) # note: the classes include 'tbl_df', 'tbl' and 'data.frame'
+
+# When working with dplyr, commands involve steps/stages, which are separated by an operator known as the pipe (i.e., %>%). The command above pipes through the following steps:
 
 # 1) using the iris data set
 # 2) group the data set by the Species column
 # 3) summarise the data set by creating a mean_petal_length column and an sd_petal_length column using the requisite R functions (i.e., mean and sd, respectively)
 # 4) arrange the data in descending order by mean_petal_length
+
+# Finally, the result of those sequences of steps are stored into the object irisDescriptives via assignment.
 
 # Several of these steps invoke dplyr functions known as verbs to help with the data manipulation process. In the example above, the verbs used included:
 
@@ -471,9 +480,9 @@ summary( filter(iris, Species == "setosa" | Species == "versicolor") )
 # + Data Restructuring +
 # ++++++++++++++++++++++
 
-# In addition to data manipulation which can be made much easier/faster with dplyr, the package tidyr can be helpful for data restructuring tasks. A common example of data restructuring involves converting data from wide to tall format. First, let's talk about the difference between wide and tall data. Wide data has data organized primarily into sequential columns; for example, consider the following variation on the employeeData example data.frame called employeeSurveyWide:
+# In addition to data manipulation which can be made much easier/faster with dplyr, the package tidyr can be helpful for data restructuring tasks. A common example of data restructuring involves converting data from wide to long (aka tall) format. First, let's talk about the difference between wide and long data. Wide data has data organized primarily into sequential columns; for example, consider the following variation on the employeeData example tibble data.frame called employeeSurveyWide:
 
-employeeSurveyWide <- data.frame(
+employeeSurveyWide <- tibble(
   EmployeeID = 101:106,
   FirstName = c("Kim", "Ken", "Bob", "Bill", "Cindy", "Jamie"),
   Age = c(24, 23, 54, NA, 64, 56),
@@ -490,23 +499,30 @@ dim(employeeSurveyWide) # 6 rows and 9 columns (including 5 survey item columns)
 
 # In this example, the five "SurveyItem" columns suggest these data are arranged in the wide format, since each survey item is being given its own column, and each row represent a single participant in the survey. In other words, there are a total of 6 participants (i.e., six employees) and 5 survey item columns for a total of 30 observations (i.e., 6*5 = 30).
 
-# Let's convert this data set to the alternative tall format using the tidyr package:
+# Let's convert this data set to the alternative long format using the tidyr package:
 
 library(tidyr)
 
-employeeSurveyTall <- employeeSurveyWide %>% gather(SurveyItem, Response, SurveyItem1:SurveyItem5) # covert wide to tall
+employeeSurveyLong <- employeeSurveyWide %>% 
+  pivot_longer(cols = SurveyItem1:SurveyItem5,
+               names_to = "SurveyItem",
+               values_to = "Response") # covert wide to long
 
 head(employeeSurveyTall, 15)
 dim(employeeSurveyTall) # 30 rows and 6 columns (5 survey item columns collapsed into the SurveyItem and Response columns)
 
-# These data are now organized as tall data such that each of the 6 participants has 5 rows of data (i.e., one row per survey item). This tall version of the data.frame still holds the same data in terms of total observations (i.e., 6*5 = 30), but the structure is different. We can convert the tall version back to wide using the spread function:
+# These data are now organized as long data such that each of the 6 participants has 5 rows of data (i.e., one row per survey item). This long version of the data.frame still holds the same data in terms of total observations (i.e., 6*5 = 30), but the structure is different. We can convert the long version back to wide using the spread function:
 
-employeeSurveyTall %>% spread(SurveyItem, Response)
+employeeSurveyBackToWide <- employeeSurveyLong %>% 
+  pivot_wider(names_from = SurveyItem,
+              values_from = Response)
 
-identical(employeeSurveyTall %>% spread(SurveyItem, Response), 
-          employeeSurveyWide
-          ) # these are identical
+identical(employeeSurveyBackToWide, employeeSurveyWide) # these are identical
 
-# Some R functions expect data to be organized as tall or wide depending upon how they are coded, so knowing how to transform data sets can be very valuable. A vignette for tidyr is available here with more examples:
+# Some R functions expect data to be organized as long or wide depending upon how they are coded, so knowing how to transform data sets can be very valuable. A vignette for tidyr is available here with more examples:
 
 # https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html
+
+# Moreover, for general data manipulation in R, be sure to check out the various packages included in the tidyverse:
+
+# https://www.tidyverse.org/packages/
