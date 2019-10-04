@@ -85,7 +85,7 @@ library(foreign) # load foreign again
 install.packages(c("dplyr", "car")) # install the dplyr and car packages (if you haven't already)
 
 library(dplyr)
-library(car) 
+library(car)
 
 # Assuming dplyr and car are each being loaded for the first time, you will see the following red message from R when loading the car package:
 

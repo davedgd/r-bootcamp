@@ -212,7 +212,7 @@ as.integer(phoneType)
 
 # In general, it is very important to use meaningful labels when working with factors. Level names consisting exclusively of numbers can also cause confusion. For instance, consider this odd example:
 
-weirdFactor <- factor(c(3, 1, 2, 2, 3, 3), levels = c(3, 1, 2))
+(weirdFactor <- factor(c(3, 1, 2, 2, 3, 3), levels = c(3, 1, 2)))
 as.character(weirdFactor) # label names
 as.integer(weirdFactor) # notice how the label "1" corresponds to the value of 3, which is counter intuitive; as.integer does not turn the initial numeric values specified in the call to factor, since those become labels
 
@@ -351,7 +351,7 @@ employeeData[3, "FirstName"]
 employeeData[3, 2]
 employeeData[, "FirstName"][3]
 employeeData[, 2][3]
-employeeData[3,][, "FirstName"] # you should probably avoid this one, but it is possible...
+employeeData[3, ][, "FirstName"] # you should probably avoid this one, but it is possible...
 
 # Ultimately, it's up to you to decide how best to make references to data.frame objects, but clarity should always be the goal (e.g., the first or second option above are potentially clearer than many of the others). As a general rule, it is best to refer to columns by name however, since column order is essentially arbitrary, thereby making references by column number potentially unreliable/hazardous. For example, consider a variation on the existing data.frame employeeData that rearranges the column order:
 
