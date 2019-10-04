@@ -37,7 +37,6 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 ### Misc ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Misc/R-Bootcamp-Misc-MontyHall.R?raw=true)):
 -	Monty Hall: A Simulation-Based Example of How to Write a Function
 ### To-Do (Work-in-Progress):
-- Update spread/gather in Unit 5 to newer tidyr 1.0.0 functions: pivot_wider/pivot_longer
 - Add more (i.e., beyond Misc) on control-flow constructs (i.e., ?Control; if/else, for/while/repeat loops, etc.)
 - Debugging
 - Python integration via reticulate
