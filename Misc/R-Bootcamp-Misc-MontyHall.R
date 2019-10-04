@@ -133,7 +133,7 @@ ggplot(plotDat, aes(x = Decision, y = Percent, fill = Outcome)) +
   ylab("Percentage of Trials") + 
   theme_bw(base_size = 20) + 
   labs(title = "Monty Hall Simulation Results",
-       caption = paste0("Total Trials: ", nrow(overallResults), " (", nrow(filter(overallResults, Decision == "Stay")), " Stay and ", nrow(filter(overallResults, Decision == "Switch")), " Switch)")) + 
+       caption = paste0("Total Trials: ", nrow(overallResults) %>% formatC(format = "f", big.mark = ",", digits = 0), " (", nrow(filter(overallResults, Decision == "Stay")) %>% formatC(format = "f", big.mark = ",", digits = 0), " Stay and ", nrow(filter(overallResults, Decision == "Switch")) %>% formatC(format = "f", big.mark = ",", digits = 0), " Switch)")) + 
   theme(plot.caption = element_text(hjust = 0.5))
 
 # To understand this code (e.g., percentage labels using geom_text), see: https://stackoverflow.com/questions/37817809/r-ggplot-stacked-bar-chart-with-counts-on-y-axis-but-percentage-as-label
