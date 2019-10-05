@@ -426,6 +426,14 @@ employeeData[, !( names(employeeData) %in% c("FirstName", "Age", "PayType") )]
 subset(employeeData, select = -c(FirstName, Age, PayType)) # note the column names are NOT in quotes, which is a peculiarity of subset (the only quotes allowed using subset are backticks)
 subset(employeeData, select = -c(`FirstName`, `Age`, `PayType`)) # same as above using backticks
 
+# Finally, to rename an existing column (or set of columns) within a data.frame, use the names (or colnames) function to reference and reassign them. For example:
+
+employeeData
+names(employeeData)
+names(employeeData)[5] # our recently added "NumChildren" column
+names(employeeData)[5] <- "NumberOfChildren" # rename (i.e., reassign) "NumChildren" to "NumberOfChildren"
+employeeData
+
 # Again, this is just a preview of basic approaches; we will spend a lot more time manipulating data.frame objects with the dplyr package in a forthcoming unit, which should streamline these types of operations.
 
 # -----
