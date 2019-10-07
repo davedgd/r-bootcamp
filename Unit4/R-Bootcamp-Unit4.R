@@ -401,17 +401,27 @@ write.csv(CSV_readr_example, file = "Data Files/More Data/WriteExampleData.csv",
 
 # As mentioned earlier, see the fwrite function in the data.table package for an extremely fast alternative to the write.csv function for working with big data sets.
 
+# ----------------------
+# Writing XLSX (writexl)
+# ----------------------
+
+# Similar to how the readxl package can be used to read Excel files, the writexl package can be used to write them. Usage is straightforward (see ?write_xlsx for additional options):
+
+library(writexl)
+
+write_xlsx(CSV_readr_example, path = "Data Files/More Data/WriteExampleData.xlsx")
+
 # -----------------------------
 # Writing Other Formats (haven)
 # -----------------------------
 
 # The haven package supports writing SPSS, SAS, and Stata files. Again, the key arguments you will need to specify are the data.frame you want to export and a path for the desired output file:
 
-write_sav(CSV_readr_example, "Data Files/More Data/WriteExampleData.sav")
-write_sas(CSV_readr_example, "Data Files/More Data/WriteExampleData.sas7bdat")
-write_dta(CSV_readr_example, "Data Files/More Data/WriteExampleData.dta")
+write_sav(CSV_readr_example, path = "Data Files/More Data/WriteExampleData.sav")
+write_sas(CSV_readr_example, path = "Data Files/More Data/WriteExampleData.sas7bdat")
+write_dta(CSV_readr_example, path = "Data Files/More Data/WriteExampleData.dta")
 
-# Remember, this tutorial only covers a few options for writing data files. There are many other packages available that can help with specific use cases (e.g., to write Excel data, see the package xlsx).
+# Remember, this tutorial only covers a few options for writing data files. There are many other packages available that can help with specific use cases.
 
 # +++++++++++++++++++++++++++++
 # + OTHER WAYS TO ACCESS DATA +
