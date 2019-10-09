@@ -48,6 +48,8 @@ worstDepartures <- flights %>%
   ) %>%
   filter(arr > 30 | dep > 30)
 
+head(worstDepartures) # inspect first few rows of the data
+
 # date conversions (via lubridate)
 
 worstDepartures$YearMonthDay <- ymd(paste(worstDepartures$year, worstDepartures$month, worstDepartures$day, sep = "-")) # create Date vector from year-month-day

@@ -418,7 +418,7 @@ library(dplyr)
 
 # Once dplyr is loaded, suppose we wanted to calculate means and SDs for the petal length and petal width columns of iris for each of the species in the data.frame. To do this, we could use the following command:
 
-irisDescriptives <- iris %>% 
+iris %>% 
   group_by(Species) %>% 
   summarise(mean_petal_length = mean(Petal.Length), 
             sd_petal_length = sd(Petal.Length)) %>%
@@ -426,10 +426,7 @@ irisDescriptives <- iris %>%
 
 irisDescriptives
 
-# The result shows the means and standard deviations of petal length for each of the three species sorted from longest (i.e., virginica) to shortest (i.e., setosa). More specifically, the output is returned as a data.frame, albeit one that looks slightly different from what we've seen before. Specifically, dplyr functions produce tibble output, and tibbles are essentially data.frame-like objects with nicer output formatting and other interesting features. For more details, see:
-
-?tibble::tibble
-str(irisDescriptives) # note: the classes include 'tbl_df', 'tbl' and 'data.frame'
+# The result shows the means and standard deviations of petal length for each of the three species sorted from longest (i.e., virginica) to shortest (i.e., setosa).
 
 # When working with dplyr, commands involve steps/stages, which are separated by an operator known as the pipe (i.e., %>%). The command above pipes through the following steps:
 
@@ -437,8 +434,6 @@ str(irisDescriptives) # note: the classes include 'tbl_df', 'tbl' and 'data.fram
 # 2) group the data set by the Species column
 # 3) summarise the data set by creating a mean_petal_length column and an sd_petal_length column using the requisite R functions (i.e., mean and sd, respectively)
 # 4) arrange the data in descending order by mean_petal_length
-
-# Finally, the result of those sequences of steps are stored into the object irisDescriptives via assignment.
 
 # Several of these steps invoke dplyr functions known as verbs to help with the data manipulation process. In the example above, the verbs used included:
 
@@ -508,8 +503,8 @@ employeeSurveyLong <- employeeSurveyWide %>%
                names_to = "SurveyItem",
                values_to = "Response") # covert wide to long
 
-head(employeeSurveyTall, 15)
-dim(employeeSurveyTall) # 30 rows and 6 columns (5 survey item columns collapsed into the SurveyItem and Response columns)
+head(employeeSurveyLong, 15)
+dim(employeeSurveyLong) # 30 rows and 6 columns (5 survey item columns collapsed into the SurveyItem and Response columns)
 
 # These data are now organized as long data such that each of the 6 participants has 5 rows of data (i.e., one row per survey item). This long version of the data.frame still holds the same data in terms of total observations (i.e., 6*5 = 30), but the structure is different. We can convert the long version back to wide using the spread function:
 
