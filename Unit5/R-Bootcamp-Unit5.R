@@ -211,15 +211,18 @@ employeeData$Age < 60 # note the NA
 
 table(employeeData$Age < 60, useNA = "always")
 
-# Stated another way, when NAs occur in an index in R, they have the potential to influence the subsequent result. This can potentially be problematic and/or unexpected in certain situations, such as if nrow were used to evaluate the resulting data.frame after subsetting. To avoid this situation involving NAs, use one of the following alternative subsetting approaches in R from the list in the prior section (the filter function in the dplyr package also applies here since it works similarly to the base R subset function):
-
-nrow( employeeData[which(employeeData$Age < 60),] ) # 4 rows
-nrow( subset(employeeData, Age < 60) )              # 4 rows
-
-# By contrast to the approaches above, these methods will return rows filled with NA values if the evaluated condition returns NAs:
+# Stated another way, when NAs occur in an index in R, they have the potential to influence the subsequent result. This can potentially be problematic and/or unexpected in certain situations, such as if nrow were used to evaluate the resulting data.frame after subsetting using logical indexing:
 
 nrow( employeeData[employeeData$Age < 60,] )        # 5 rows
 nrow( employeeData[with(employeeData, Age < 60),] ) # 5 rows
+
+# To avoid this situation involving NAs, you should generally prefer subsetting approaches that avoid logical subsetting, such as methods that select based on row indexes via the which function:
+
+nrow( employeeData[which(employeeData$Age < 60),] ) # 4 rows
+
+# Alternatively, you can use the subset function to avoid the problem as well (the filter function in the dplyr package also applies here since it works similarly to the base R subset function):
+
+nrow( subset(employeeData, Age < 60) )              # 4 rows
 
 # +++++++++++
 # + Merging +
@@ -423,8 +426,6 @@ iris %>%
   summarise(mean_petal_length = mean(Petal.Length), 
             sd_petal_length = sd(Petal.Length)) %>%
   arrange(desc(mean_petal_length))
-
-irisDescriptives
 
 # The result shows the means and standard deviations of petal length for each of the three species sorted from longest (i.e., virginica) to shortest (i.e., setosa).
 

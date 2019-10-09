@@ -146,7 +146,7 @@ boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 
 # It is also possible to save R plots using code consistent with concepts introduced in previous units. To save an R plot as a PDF for example, you can use the generic pdf function in conjunction with dev.off:
 
-setwd() # saved plots will appear in the working directory
+# setwd("~/Downloads") # saved plots will appear in the working directory
 
 pdf(file = "InsectSpraysBoxplot.pdf", width = 8, height = 5) # width/height in inches
 boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
@@ -214,9 +214,9 @@ abline(lm(dist ~ speed, data = cars),
 ggplot(cars, aes(x = speed, y = dist)) + 
   geom_point(color = "blue", size = 3) + 
   geom_smooth(method = "lm", color = "red", linetype = 5, size = 1.5) + 
-  ggtitle("Stopping Distance Relative to Car Speed") + 
-  xlab("Speed (mph)") + 
-  ylab("Stopping Distance (ft)") + 
+  labs(title = "Stopping Distance Relative to Car Speed", 
+       x = "Speed (mph)",
+       y = "Stopping Distance (ft)") + 
   theme_bw(base_size = 20)
 
 # Note: use se = FALSE in geom_smooth to turn off confidence interval.
@@ -318,9 +318,9 @@ hist(mtcars$mpg,
 
 ggplot(mtcars, aes(x = mpg)) + 
   geom_histogram(bins = 10, fill = "lightblue", color = "black") + 
-  xlab("MPG") + 
-  ylab("Frequency") + 
-  ggtitle("Histogram of MPG") + 
+  labs(title = "Histogram of MPG", 
+       x = "MPG",
+       y = "Frequency") + 
   theme_bw(base_size = 20)
 
 # ---------
@@ -391,9 +391,9 @@ data(cars)
 storedPlot2 <- ggplot(cars, aes(x = speed, y = dist)) + 
   geom_point(color = "blue", size = 3) + 
   geom_smooth(method = "lm", color = "red", linetype = 5, size = 1.5) + 
-  ggtitle("Stopping Distance Relative to Car Speed") + 
-  xlab("Speed (mph)") + 
-  ylab("Stopping Distance (ft)") + 
+  labs(title = "Stopping Distance Relative to Car Speed", 
+       x = "Speed (mph)",
+       y = "Stopping Distance (ft)") + 
   theme_bw(base_size = 20)
 
 # To save this plot via ggsave, use a command similar to the following (adjusting the arguments as desired):

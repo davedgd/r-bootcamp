@@ -37,23 +37,24 @@ str(flights)
 # Data Manipulation
 # -----------------
 
-# create mean arr and dep delay columns per dplyr vignette example (https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
+# create mean arr and dep delay columns per dplyr vignette example (https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html), making sure to include the year, month, and day columns to invoid a red message about "Adding missing grouping variables"
 
 worstDepartures <- flights %>%
   group_by(year, month, day) %>%
-  select(arr_delay, dep_delay) %>%
+  select(year, month, day, arr_delay, dep_delay) %>%
   summarise(
     arr = mean(arr_delay, na.rm = TRUE),
     dep = mean(dep_delay, na.rm = TRUE)
   ) %>%
   filter(arr > 30 | dep > 30)
 
-head(worstDepartures) # inspect first few rows of the data
+worstDepartures # inspect first 10 rows as a tibble
 
 # date conversions (via lubridate)
 
-worstDepartures$YearMonthDay <- ymd(paste(worstDepartures$year, worstDepartures$month, worstDepartures$day, sep = "-")) # create Date vector from year-month-day
-worstDepartures$MonthFloor <- floor_date(worstDepartures$YearMonthDay, unit = "month") # floor date as month
+worstDepartures <- worstDepartures %>%
+  mutate(Date = ymd(paste(year, month, day, sep = "-"))) %>% # convert year-month-day into valid Dates
+  mutate(MonthFloor = floor_date(Date, unit = "month")) # floor the date to to create month groups
 
 # --------
 # Plotting
@@ -61,20 +62,20 @@ worstDepartures$MonthFloor <- floor_date(worstDepartures$YearMonthDay, unit = "m
 
 # generate plot
 
-p1 <- ggplot(worstDepartures, aes(x = MonthFloor, y = ..count.., fill = ..count..)) + 
-  geom_bar(stat = "count")
+p1 <- ggplot(worstDepartures, aes(x = MonthFloor, y = stat(count), fill = stat(count))) + 
+  geom_bar(stat = "count") # regarding stat(count), see https://ggplot2.tidyverse.org/reference/stat.html
 
 # further modify existing plot
 
 p2 <- p1 + 
   theme_bw(base_size = 18) + 
-  scale_y_continuous(breaks=seq(0, 10, by = 2)) + 
-  scale_x_date(date_breaks = "1 months", date_labels = "%b") + # for more on date_labels, see Unit 3 and/or https://www.stat.berkeley.edu/~s133/dates.html
+  scale_y_continuous(breaks = seq(0, 10, by = 2)) + 
+  scale_x_date(date_breaks = "1 months", date_labels = "%b") + # for more on date_labels, see Unit 3
   scale_fill_gradient(low = "grey", high = "red") + 
   labs(title = "Months with Highly Delayed Flights in NYC During 2013",
        x = "Month",
        y = "Number of Highly Delayed Flights") + 
-  guides(fill = FALSE)
+  guides(fill = FALSE) # turn off the fill legend
 
 # view plots individually
 
