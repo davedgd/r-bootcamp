@@ -1,5 +1,14 @@
 # Description
-The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overview of the fundamental concepts necessary to work within the R statistical programming language. Through a series of annotated, hands-on lessons that include practice exercises, students will learn to understand the basic principles of the R language including: 1) installing R and conducting basic operations in RStudio; 2) understanding R objects, assignment, and data types (e.g., numeric, character, logical); 3) working with different data structures (e.g., vectors, factors, and data frames); 4) using functions and packages to read and write data; 5) manipulating data; and 6) basic and intermediate plotting. No prior programming experience is necessary to benefit from this course.
+The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overview of the fundamental concepts necessary to work within the R statistical programming language. Through a series of annotated, hands-on lessons that include practice exercises, students will learn to understand the basic principles of the R language including: 
+
+1. installing R and conducting basic operations in RStudio
+2. understanding R objects, assignment, and data types (e.g., numeric, character, logical)
+3. working with data structures (e.g., vectors, factors, data frames)
+4. using functions and packages to read and write data
+5. manipulating data
+6. basic and intermediate plotting
+
+No prior programming experience is necessary to benefit from this course.
 
 ## Table of Contents
 
