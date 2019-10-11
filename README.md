@@ -50,3 +50,4 @@ No prior programming experience is necessary to benefit from this course.
 - Debugging
 - Python integration via reticulate
 - Add basic string search/regular expressions
+- Break down the first ggplot call in Unit 6 into basic components (e.g., aes, geom, etc.)
