@@ -17,9 +17,9 @@
 # + Descriptives +
 # ++++++++++++++++
 
-# Now that we understand data.frame objects and can import data, we are ready to start working with data. Before we begin, let's import some data using the data function; for this example, we will use the iris data set, which is a famous data set involving iris flower species:
+# Now that we understand data.frame objects and can import data, we are ready to start working with data. Before we begin, let's import some data using R's built-in data loading function (i.e., see ?data); for this example, we will load the iris data set, which is a famous data set involving iris flower species:
 
-data(iris)
+data(iris) # load the "iris" data.frame object into the current session
 ?iris
 head(iris)
 dim(iris)
