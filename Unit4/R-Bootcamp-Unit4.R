@@ -31,7 +31,7 @@
 
 # Let's install our first few packages, which we will use later in this script to load data files from various file sources. The packages we want to install include "foreign", "readr", and "haven"; we can install all of these packages at once using the install.packages command, which takes a vector of one or more package names you want to install:
 
-install.packages(c("foreign", "readr", "haven"))
+install.packages(c("foreign", "readr", "haven"), dependencies = TRUE, type = "binary", ask = FALSE)
 
 # Notice how running this command may take a moment or two for the command to complete in the console: installing R packages requires downloading them from the internet and unpacking them, and this may take time to complete: the amount of time it takes will vary from package to package and on the number of packages you are trying to install. You will know package installation has completely finished when the stop sign icon disapears in the top right corner of the console pane and when a message starting with "The downloaded binary packages are in" appears in the console.
 
@@ -82,7 +82,7 @@ library(foreign) # load foreign again
 
 # Although rare, it is possible for two different R packages to have a function with the same name. For example, the dplyr and car packages both have a function named recode, which serves a similar purpose in both packages (i.e., to recode factor variable labels) but has different usage across the packages. The order in which you load the packages will determine which one R will use when referring to a function, with the precedence being to use the function from the most recently loaded package:
 
-install.packages(c("dplyr", "car")) # install the dplyr and car packages (if you haven't already)
+install.packages(c("dplyr", "car"), dependencies = TRUE, type = "binary", ask = FALSE) # install the dplyr and car packages (if you haven't already)
 
 library(dplyr)
 library(car)
