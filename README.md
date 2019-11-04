@@ -51,3 +51,4 @@ No prior programming experience is necessary to benefit from this course.
 - Python integration via reticulate
 - Add basic string search/regular expressions
 - Break down the first ggplot call in Unit 6 into basic components (e.g., aes, geom, etc.)
+- Add a discussion of different geom stat options to Unit 6 (e.g., stat = "identity", stat = "count", stat = "summary")
