@@ -31,9 +31,13 @@
 
 # Let's install our first few packages, which we will use later in this script to load data files from various file sources. The packages we want to install include "foreign", "readr", and "haven"; we can install all of these packages at once using the install.packages command, which takes a vector of one or more package names you want to install:
 
-install.packages(c("foreign", "readr", "haven"), dependencies = TRUE, type = "binary", ask = FALSE)
+install.packages(c("foreign", "readr", "haven"))
 
 # Notice how running this command may take a moment or two for the command to complete in the console: installing R packages requires downloading them from the internet and unpacking them, and this may take time to complete: the amount of time it takes will vary from package to package and on the number of packages you are trying to install. You will know package installation has completely finished when the stop sign icon disapears in the top right corner of the console pane and when a message starting with "The downloaded binary packages are in" appears in the console.
+
+# Occasionally, you may run into issues installing certain packages. For example, this may occur if you have not installed the R Build Tools but a certain package is attempting to install from "source" code. To work around these issues, you can try adding additional arguments to your install.packages command:
+
+install.packages(c("dplyr", "car"), dependencies = TRUE, type = "binary", ask = FALSE)
 
 # After installing an R package, you need to take one more step to actually load them. To load a package, use the library function with the name of your package:
 
