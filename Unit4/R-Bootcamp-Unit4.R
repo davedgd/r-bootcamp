@@ -49,13 +49,13 @@ library(haven)
 
 # In addition, note that while install.packages should generally not be called repeatedly, note that you can reload package libraries as many times as you like to verify that they are available for you to work with, and the process should be immediate:
 
-library(foreign)
-library(foreign)
-library(foreign)
+library(haven)
+library(haven)
+library(haven)
 
 # Lastly, you can generally get help regarding the functions included in the package via the help function in conjunction with the package argument:
 
-help(package = "foreign")
+help(package = "haven")
 
 # The help function will show you a list of functions available in a package in the lower right-hand pane.
 
@@ -74,11 +74,11 @@ help(package = "foreign")
 # Unloading Packages
 # ------------------
 
-# Although typically unnecessary, it is possible to unload a package from R without restarting R. To do so, use the detach function with the unload argument. For example, the following code would allow you to unload the foreign package:
+# Although typically unnecessary, it is possible to unload a package from R without restarting R. To do so, use the detach function with the unload argument. For example, the following code would allow you to unload the readr package:
 
-library(foreign) # make sure foreign is loaded
-detach("package:foreign", unload = TRUE) # unload foreign
-library(foreign) # load foreign again
+library(readr) # make sure readr is loaded
+detach("package:readr", unload = TRUE) # unload readr
+library(readr) # load readr again
 
 # ----------------------------------------
 # Side Note: Package Loading Order Matters
