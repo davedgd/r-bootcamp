@@ -147,8 +147,8 @@ cat("as expected, cat will output a single backslash here: \\")
 
 # Common ones you may encounter when working with data include the tab (i.e., \t) and newline character (i.e., \n), which we will talk about more when we discuss importing and exporting data:
 
-"this strong contains a tab \t and a newline \n as well"
-cat("this strong contains a tab \t and a newline \n as well")
+"this string contains a tab \t and a newline \n as well"
+cat("this string contains a tab \t and a newline \n as well")
 
 # We will spend more time later talking about various string operations in R, which can be important for text analytics, natural language processing (NLP), etc. For now, here's a quick preview of a handful of relevant functions:
 
