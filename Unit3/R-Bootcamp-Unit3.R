@@ -283,7 +283,7 @@ tail(employeeData, n = 2) # see only the last two rows
 
 # 1) Data frames can consist of multiple columns, each with a distinct name and data type.
 # 2) Each column is a vector, and each vector must be of the same length (NAs can be used to pad missing data, as in the Age column in the example).
-# 3) R will automatically try to convert the columns into a suitable data type based on the data, but the assumption may not always be ideal (see ?data.frame for options on how to control this process).
+# 3) R will automatically try to convert the columns into a suitable data type based on the data, but the assumption may not always be ideal (see ?data.frame for options on how to control this process; note that as of R 4.0.0, the stringsAsFactors argument defaults to FALSE, whereas in prior versions, it had a default value of TRUE).
 
 # Regarding the third point, it's worth noting that IDs likely ought to be factored since they aren't really integer data per se (e.g., would you ever add up two employee IDs?). To accomplish this, we can use the assignment operator approach combined with the $ operator, which is used to refer to a specific column name within the data:
 
@@ -371,23 +371,21 @@ employeeDataReorder$FirstName # these are the same
 # All of these examples have focused on referencing or updating existing data within a data.frame object. There are of course ways you can add new rows and/or columns to a data.frame via assignment. To add a new row, you must supply a valid value for each respective column. To see how, consider this example, which covers some potential data type/structure issues:
 
 employeeData
-str(employeeData) # note that EmployeeID and FirstName are factors, and thus to add new/novel levels, we will need to unfactor these columns first (e.g., one option is to convert them to strings first); by contrast, we can leave PayType alone if we do not expect our new data to contain a novel factor level (i.e., something besides the defined levels of Hourly or Salaried)
+str(employeeData) # note that EmployeeID is currently a factor, and thus to add new/novel levels, we will need to unfactor the column first (e.g., one option is to convert it to a string, which is what we'll do); by contrast, we can leave PayType alone if we do not expect our new data to contain a novel factor level (i.e., something besides the defined levels of Hourly or Salaried)
 
 employeeData$EmployeeID <- as.character(employeeData$EmployeeID)
-employeeData$FirstName <- as.character(employeeData$FirstName)
 
 employeeData
-str(employeeData) # notice the EmployeeID and FirstName columns are no longer factored (i.e., they are just simple character vectors), but the data values are still the same after these conversions
+str(employeeData) # notice the EmployeeID is no longer a factor (i.e., it's now just simple character vector), but the data values are not altered by the conversion
 
 employeeData[6, ] <- c(106, "Jamie", 56, "Hourly") # notice 106 is automatically converted to a string by R
 employeeData
-str(employeeData) # we've successfully added the new row of data; if we want to revert the structure back to our starting point, we could also refactor the EmployeeID and FirstName columns...
+str(employeeData) # we've successfully added the new row of data; if we want to revert the structure back to our starting point, we could also refactor the EmployeeID column...
 
 employeeData$EmployeeID <- as.factor(employeeData$EmployeeID)
-employeeData$FirstName <- as.factor(employeeData$FirstName)
 
 employeeData
-str(employeeData) # all set (and note: it's ultimately your task to make sure the data types in your data.frame object are set in the way you think makes the most sense [e.g., it's debatable whether or not FirstName should be stored as a factor or more simply as a character string; you should decide how it should be set up and then make the necessary changes])
+str(employeeData) # all set (and note: it's ultimately your task to make sure the data types in your data.frame object are explicitly set in the way you think makes the most sense from a data perspective)
 
 # Omitting or deleting rows is more straightforward than adding them. Simply use the bracket notation with negative values, similar to how you would for vectors:
 
