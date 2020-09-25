@@ -298,8 +298,8 @@ ggplot(mtcars, aes(x = factor(gear), fill = factor(gear))) +
   geom_bar() + 
   xlab("Number of Forward Gears") + 
   ylab("Count") + 
-  theme(legend.position = "none")  + # turn off the legend
-  theme_bw(base_size = 20)
+  theme_bw(base_size = 20) +
+  theme(legend.position = "none") # turn off the legend
 
 # --- Histogram Example ---
 

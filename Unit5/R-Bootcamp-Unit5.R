@@ -451,24 +451,31 @@ iris %>%
 
 # https://cran.r-project.org/web/packages/dplyr/index.html
 
-# Again, in the case of dplyr, the "Introduction to dplyr" vignette linked above provides annotated examples for commonly used verbs using the flights data set available in the package nycflights. Let's go ahead and load the nycflights13 package now as well before we explore the vignette further:
+# Again, in the case of dplyr, the "Introduction to dplyr" vignette linked above provides annotated examples for commonly used verbs using the starwars data set provided with dplyr:
 
-library(nycflights13)
+?starwars
 
-?flights
+# The starwars data consists of 87 rows of data about characters from the movies with 14 columns:
 
-# The flights data consists of 336,776 rows of flight data for NYC airports in 2013 (i.e., it is a relatively large data set) with 19 columns:
+head(starwars)
+dim(starwars)
 
-head(flights)
-dim(flights)
+# Within the vignette, you will see examples of various verbs and how they interact with the data set. For example, the first verb shown is filter, which allows you to subset data:
 
-# Within the vignette, you will see examples of various verbs and how they interact with the flights data set. For example, the first verb shown is filter, which allows you to subset data:
-
-filter(flights, month == 1, day == 1) # select flights where the month is 1 and the day is 1
+starwars %>% filter(skin_color == "light", eye_color == "brown")
 
 # Once you know a verb, you can apply it to any data set. For instance, we could use filter with the iris data set to select certain species (similar to the subset function):
 
 summary( filter(iris, Species == "setosa" | Species == "versicolor") )
+
+# We could also add this verb to our earlier example output if needed to tweak the result further. For instance:
+
+iris %>% 
+  filter(Species == "setosa" | Species == "versicolor") %>%
+  group_by(Species) %>% 
+  summarise(mean_petal_length = mean(Petal.Length), 
+            sd_petal_length = sd(Petal.Length)) %>%
+  arrange(desc(mean_petal_length))
 
 # Although most anything you can do in dplyr can also be done with base R, I highly recommend taking the time to work through the vignette and the various examples to get a handle on how dplyr works. It can save you a lot of time and help you to write clean/consistent code (I personally use it frequently).
 

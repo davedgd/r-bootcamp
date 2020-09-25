@@ -701,4 +701,3 @@ time8 - time7
 # ------------------------------------------------------------
 
 # Various aspects of time including time zones, daylight savings time, and leap years can add significant complexity to working with dates that extend over long periods or when data comes from across the globe. For cases such as these, take a look at the lubridate and anytime packages, which can significantly simplify work involving with dates/times, thereby helping to avoid basic mistakes. The following unit provides details on how to work with packages in R.
-
