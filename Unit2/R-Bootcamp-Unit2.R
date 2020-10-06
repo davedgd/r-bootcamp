@@ -4,6 +4,8 @@
 # + AUTHOR: David Dobolyi +
 # +++++++++++++++++++++++++
 
+# -- KEY CONCEPTS --
+
 # - Relational operators
 # - R data types
 # - R objects and assignment operators
