@@ -19,7 +19,7 @@
 # Exercise 2
 # ----------
 
-# Add together vectors exVec1 and exVec2 and store these in a new vector object called exVecResult using a single command and show the result.
+# Add together vectors exVec1 and exVec2 and store these in a new vector object called exVecResult using a single command. Show the result.
 
 # ----------
 # Exercise 3
@@ -28,7 +28,7 @@
 # Use bracket notation to: 
 
 # A) return the 3rd value inside vector exVec1
-# B) return all but the 2nd and 3rd values in the exVec2
+# B) return all but the 2nd and 3rd values in exVec2
 
 # ----------
 # Exercise 4
