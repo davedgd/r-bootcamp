@@ -19,7 +19,7 @@
 # Exercise 2
 # ----------
 
-# Add together vectors exVec1 and exVec2 and store these in a new vector object called exVecResult using a single command.
+# Add together vectors exVec1 and exVec2 and store these in a new vector object called exVecResult using a single command and show the result.
 
 # ----------
 # Exercise 3

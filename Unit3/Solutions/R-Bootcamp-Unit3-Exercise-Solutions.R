@@ -24,9 +24,10 @@ exVec3 <- seq(-5, 5, by = .5)
 # Exercise 2
 # ----------
 
-# Add together vectors exVec1 and exVec2 and store these in a new vector object called exVecResult using a single command.
+# Add together vectors exVec1 and exVec2 and store these in a new vector object called exVecResult using a single command and show the result.
 
 exVecResult <- exVec1 + exVec2
+exVecResult
 
 # ----------
 # Exercise 3
