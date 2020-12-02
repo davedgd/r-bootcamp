@@ -27,17 +27,17 @@
 # A) interactively in RStudio: Tools -> Install Packages...
 # B) using the install.packages function
 
-# Besides these methods, RStudio 1.2 (and up) will conveniently also offer to install some packages for you automatically if they are referenced in your script but not yet installed on your system. Ultimately, it's up to you to decide how to install your packages, but the install.packages function is indispensible since the other methods depend on it. There is one key point about R packages to be fully aware of however: namely, package installation only needs to happen once per R installation. In other words, once you have installed an R package, it will stay installed for a particular major version of R (e.g., R 3.6, which includes 3.6.0, 3.6.1, etc.) and you will not need to install it again. In fact, it is important to avoid reinstalling packages if possible, since the process can take some time to complete and can also cause warnings from RStudio if trying to reinstall packages that are already in use in your R session.
+# Besides these methods, RStudio 1.2 (and up) will conveniently also offer to install some packages for you automatically if they are referenced in your script but not yet installed on your system. Ultimately, it's up to you to decide how to install your packages, but the install.packages function is indispensable since the other methods depend on it. There is one key point about R packages to be fully aware of however: namely, package installation only needs to happen once per R installation. In other words, once you have installed an R package, it will stay installed for a particular major version of R (e.g., R 3.6, which includes 3.6.0, 3.6.1, etc.) and you will not need to install it again. In fact, it is important to avoid reinstalling packages if possible, since the process can take some time to complete and can also cause warnings from RStudio if trying to reinstall packages that are already in use in your R session.
 
 # Let's install our first few packages, which we will use later in this script to load data files from various file sources. The packages we want to install include "foreign", "readr", and "haven"; we can install all of these packages at once using the install.packages command, which takes a vector of one or more package names you want to install:
 
-install.packages(c("foreign", "readr", "haven"))
+#install.packages(c("foreign", "readr", "haven"))
 
-# Notice how running this command may take a moment or two for the command to complete in the console: installing R packages requires downloading them from the internet and unpacking them, and this may take time to complete: the amount of time it takes will vary from package to package and on the number of packages you are trying to install. You will know package installation has completely finished when the stop sign icon disapears in the top right corner of the console pane and when a message starting with "The downloaded binary packages are in" appears in the console.
+# Notice how running this command may take a moment or two for the command to complete in the console: installing R packages requires downloading them from the internet and unpacking them, and this may take time to complete: the amount of time it takes will vary from package to package and on the number of packages you are trying to install. You will know package installation has completely finished when the stop sign icon disappears in the top right corner of the console pane and when a message starting with "The downloaded binary packages are in" appears in the console.
 
 # Occasionally, you may run into issues installing certain packages. For example, this may occur if you have not installed the R Build Tools but a certain package is attempting to install from "source" code. To work around these issues, you can try adding additional arguments to your install.packages command:
 
-install.packages(c("dplyr", "car"), dependencies = TRUE, type = "binary", ask = FALSE)
+#install.packages(c("dplyr", "car"), dependencies = TRUE, type = "binary", ask = FALSE)
 
 # After installing an R package, you need to take one more step to actually load them. To load a package, use the library function with the name of your package:
 
@@ -86,14 +86,15 @@ library(readr) # load readr again
 
 # Although rare, it is possible for two different R packages to have a function with the same name. For example, the dplyr and car packages both have a function named recode, which serves a similar purpose in both packages (i.e., to recode factor variable labels) but has different usage across the packages. The order in which you load the packages will determine which one R will use when referring to a function, with the precedence being to use the function from the most recently loaded package:
 
-install.packages(c("dplyr", "car"), dependencies = TRUE, type = "binary", ask = FALSE) # install the dplyr and car packages (if you haven't already)
+#install.packages(c("dplyr", "car"), dependencies = TRUE, type = "binary", ask = FALSE) # install the dplyr and car packages (if you haven't already)
 
 library(dplyr)
 library(car)
 
 # Assuming dplyr and car are each being loaded for the first time, you will see the following red message from R when loading the car package:
 
-# The following object is masked from ‘package:dplyr’:
+# The following object is masked from 'package:dplyr':
+#  
 #     recode
 
 # In this case, recode within car will take precedence since the car package was loaded most recently, so calling recode will now use the one from car:
@@ -260,7 +261,7 @@ list.files("..")  # step down a folder
 
 # Before we can read in a data file, we need to make sure we can provide a valid path to access it. Since paths can be relative as described in the preceding section, we can use setwd to establish our working directory first and then use a relative path to our file in function arguments. For example:
 
-setwd("~/Downloads/WorkingDirectoryExample") # set the working directory (change this for yourself as needed)
+#setwd("~/Downloads/WorkingDirectoryExample") # set the working directory (change this for yourself as needed)
 list.files() # list files in the working directory
 list.files("Data Files") # list files inside the Data Files subfolder
 
