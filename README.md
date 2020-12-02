@@ -10,6 +10,8 @@ The **R Bootcamp** (also known as “Data Wrangling in R”) provides an overvie
 
 No prior programming experience is necessary to benefit from this course.
 
+**Note:** For the Python version of this course, visit the [python-bootcamp](https://github.com/davedgd/python-bootcamp).
+
 ## Table of Contents
 
 ### Unit 1 ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit1/R-Bootcamp-Unit1.R?raw=true)/[HTML](http://htmlpreview.github.io/?https://github.com/davedgd/r-bootcamp/blob/master/Unit1/HTML/R-Bootcamp-Unit1.html), [Exercise](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit1/R-Bootcamp-Unit1-Exercises.R?raw=true), [Solution](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Unit1/Solutions/R-Bootcamp-Unit1-Exercise-Solutions.R?raw=true)):
