@@ -57,3 +57,4 @@ No prior programming experience is necessary to benefit from this course.
 - Flesh out dplyr discussion and explain chaining more clearly (more generally, spend more time on tidyverse?)
 - Add some examples showing why lubridate/anytime are preferable to base
 - Discuss performance optimization (e.g., BLAS/LAPACK; parallel processing)
+- Add a note on how to change file association from R GUI to RStudio (Unit 1) for Windows/macOS
