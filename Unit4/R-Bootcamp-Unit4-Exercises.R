@@ -27,7 +27,7 @@
 # Exercise 4
 # ----------
 
-# Read in the data file "ExerciseData3.txt" in R-Bootcamp-Unit4-Data.zip and store it in an object called ExDat3. Show the structure, head, and dimensions of the data to verify you imported it correctly. HINT: make sure you have accounted for the quoting characters in this data file.
+# Read in the data file "ExerciseData3.txt" in R-Bootcamp-Unit4-Data.zip and store it in an object called ExDat3. Show the structure, head, and dimensions of the data to verify you imported it correctly. HINT: make sure you have accounted for the quoting characters in this data file; in addition, you may want to open the file in a text editor to see if there is something else wrong with it.
 
 # ----------
 # Exercise 5
