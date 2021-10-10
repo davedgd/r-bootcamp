@@ -172,7 +172,52 @@ library(ggplot2)
 
 # Similar to dplyr, ggplot2 makes the language of plotting in R more consistent, with functions that can be used to tweak plots working similarly regardless of the type of plot in question (e.g., scatterplot vs. boxplot; these different types are referred to as geoms in the language of ggplot2).
 
-# Rather than including a full description and tutorial for ggplot2 within this bootcamp unit, I will provide code that recreates the bulk of the R plot examples above via ggplot2 geoms and then also provide links to relevant ggplot2 tutorials (e.g., see "Learning ggplot2" at the official package page: https://ggplot2.tidyverse.org/). I will also provide a supplementary example of a ggplot2-based analysis via an R script named R-Bootcamp-Unit6-ExampleScript.R as part of this unit.
+# At their core, ggplots must include a few basic components:
+
+# A) an initial call to the ggplot function, which sets up the plot and specifies a data source
+# B) a set of aesthetics in one or more calls to the aes function, which establishes the mapping between what you want to see and where it can be found in the data (i.e., typically column names)
+# C) a set of geoms -- or layers -- that determine the type of plot to be created, e.g., geom_point, geom_line, etc.
+
+# For example, consider the following code, which recreates our earlier point (or scatter) plot:
+
+ggplot(cars, aes(x = speed, y = dist)) + 
+  geom_point()
+
+# The first line (i.e., starting with ggplot...) establishes our plot; the data are referenced in the first argument (i.e., cars) and subsequently the aes function is used to set up our axes (i.e., speed on x and dist on y, which are columns from cars):
+
+head(cars)
+
+# Notice that we do not need to reference the name of the data set more than once beyond in the initial call to the ggplot function. In other words, when setting up the references
+
+# With the data source and aesthetic mapping in place, we simply have to add (i.e., with a "+" symbol) the geom layer we desired, which in this case is geom_point. Note that without adding the geom_point, we'd simply have an empty plot with established axes but no layers:
+
+ggplot(cars, aes(x = speed, y = dist))
+
+# To actually see data on the plot, we need at least one geom, and possibly several:
+
+ggplot(cars, aes(x = speed, y = dist)) +
+  geom_point() + 
+  geom_smooth()
+
+# In the modified code above, we put back in the geom_point from earlier and also incorporated geom_smooth, which adds a smoothing line (loess) to the plot to help elucidate the relationship in the data. Using additional tweaks to the geom functions, we can tune the look of the plot further:
+
+ggplot(cars, aes(x = speed, y = dist)) + 
+  geom_point(color = "blue", size = 3) + 
+  geom_smooth(method = "lm", color = "red", linetype = 5, size = 1.5)
+
+# Notice how we used the "color" and "size" arguments in each geom to set up our plot as desired. This is a key advantage of ggplot: the argument names are generally very consistent across geoms, making it easier to pick up a new geom after you've gotten a handle on one previously.
+
+# Taking this a step further, we can add in additional ggplot functions to make the plot look even better. For example, let's customize the labels with labs and adjust the plot theme and label sizing with theme_bw:
+
+ggplot(cars, aes(x = speed, y = dist)) + 
+  geom_point(color = "blue", size = 3) + 
+  geom_smooth(method = "lm", color = "red", linetype = 5, size = 1.5) + 
+  labs(title = "Stopping Distance Relative to Car Speed", 
+       x = "Speed (mph)",
+       y = "Stopping Distance (ft)") + 
+  theme_bw(base_size = 20)
+
+# The example above provide a relatively quick and simple introduction to ggplot2. Due to space/time constraints, rather than including a full description and tutorial for ggplot2 within this bootcamp unit, I will provide code that recreates the bulk of the R plot examples above via ggplot2 geoms and then also provide links to relevant ggplot2 tutorials to help you learn more (e.g., see "Learning ggplot2" at the official package page: https://ggplot2.tidyverse.org/). I will also provide a supplementary example of a ggplot2-based analysis via an R script named R-Bootcamp-Unit6-ExampleScript.R as part of this unit.
 
 # Since the examples provided below are only a tiny subset of what ggplot2 offers, use the following help command to get a more complete sense of what ggplot2 offers:
 
@@ -182,6 +227,34 @@ help.search("geom_", package = "ggplot2")
 
 # A) storing a ggplot as an object
 # B) saving via ggplot2
+
+# ----------------------------------------------
+# Side Note: Aesthetic Mapping or Layer Setting?
+# ----------------------------------------------
+
+# One aside to avoid a common point of confusion. Notice that inside the aes function, all arguments refer to columns from the data source (i.e., speed and dist from the cars data set in this case):
+
+ggplot(cars, aes(x = speed, y = dist)) +
+  geom_point()
+
+# To change the color of the points to a fixed value, we do not modify the aesthetic, but rather the relevant layer itself. For example, to color the points blue, we make the following modification:
+
+ggplot(cars, aes(x = speed, y = dist)) +
+  geom_point(color = "blue")
+
+# A common point of confusion is changing colors via the aesthetic. For example, let's try moving the color argument from the geom (i.e., geom_smooth) to the aesthetic (i.e., to aes):
+
+ggplot(cars, aes(x = speed, y = dist, color = "blue")) +
+  geom_point()
+
+# Notice we now have a line that is red (rather than blue as desired) and an odd legend. The reason for this is that we incorrectly tried to set an aesthetic to a fixed value, which is not what aesthetics are intended for. Instead, if we wanted to map the points to a color usin the aesthetic, we'd have to provide R with a column to use. For instance:
+
+ggplot(cars, aes(x = speed, y = dist, color = dist)) +
+  geom_point()
+
+# Now we have the points colored by dist, such that each point has a unique color value pulled from the data (i.e., if the cars data.frame has 50 rows, then the dist column in cars also must have 50 values to assign a color scale/gradient). Using a color aesthetic in this way is somewhat redundant, since a point's position on the y-axis already provides dist information; nevertheless, at least the mapping is correct, and the legend/color setup is accurate with respect to the data being visualized.
+
+# In any event, think carefully about where an argument belongs in a ggplot call: typically, if you are trying to assign things to a fixed value (i.e., "red" or 3), these do not belong in the aesthetic (i.e., not in aes).
 
 # -----------
 # Point Plots
@@ -342,6 +415,44 @@ boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 ggplot(InsectSprays, aes(x = spray, y = count)) + 
   geom_boxplot(fill = "lightgray") + 
   theme_bw(base_size = 20)
+
+# ------------------------------
+# Side Note: The "stat" Argument 
+# ------------------------------
+
+# Another common point of confusion with ggplot2 is the "stat" argument, which appears in several geoms. By default, stat will be set to a value that is common for a particular geom. For instance, with geom_bar, the default stat value is "count" (i.e., stat = "count"):
+
+ggplot(mtcars, aes(x = gear)) + 
+  geom_bar(stat = "count")
+
+# In this case, "count" implies that geom_bar will compute the count of each distinct level of the x variable being plotted based on the aesthetic. In other words, the plot function automatically conducts a calculation on your behalf, which could be calculated by hand as follows via dplyr:
+
+library(dplyr)
+
+mtcars %>%
+  group_by(gear) %>%
+  summarise(n = n())
+
+# Alternatively, we could even simply this further using the count function in dplyr, which performs the same calculation in fewer steps (it wraps the group_by and summarise procedure):
+
+mtcars %>%
+  count(gear)
+
+# In any case, the geom_bar function also performed this calculation on our behalf and plotted the result (i.e., compare the values from the dplyr output to the plot, and you will see they match one-to-one). Suppose, however, that we had already computed some summarized data and wanted to plot it directly ourselves. This is a scenario where the stat argument can be helpful, since "identity" is another possible setting:
+
+plotDat <- mtcars %>%
+  count(gear)
+
+ggplot(plotDat, aes(x = gear, y = n)) + 
+  geom_bar(stat = "identity")
+
+# The code above produces essentially the same plot as we had using stat set to the default of "count" earlier, albeit with a minor difference in column labels, which could easily be fixed:
+
+ggplot(plotDat, aes(x = gear, y = n)) + 
+  geom_bar(stat = "identity") + 
+  labs(y = "count")
+
+# Now the plots match perfectly. While this isn't a particularly useful example in practice, be aware that the stat argument is powerful and can change the underlying processing performed by various geoms to produce exactly the plot you may need given how you've chosen to process the data.
 
 # -----------------------------
 # Storing a ggplot as an Object

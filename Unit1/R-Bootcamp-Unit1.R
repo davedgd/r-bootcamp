@@ -30,6 +30,15 @@
 
 # Once you have installed both R and RStudio, launch RStudio and then go to File -> Open File... to open this R script (rBootcamp-Unit1.R) for the next step.
 
+# -----------------------------------
+# Side Note: RStudio File Association
+# -----------------------------------
+
+# By default, R script files opened via your file manager (e.g., Finder on Mac or File Explorer on Windows) may not open in RStudio, but rather in the base R GUI (e.g., RGui/R.app GUI) or some other app. If you'd like to ensure RStudio is the default file handler for R scripts, you will need to do the following:
+
+# A) Mac: Open Finder and browse to an R script (e.g., rBootcamp-Unit1.R). Right click on it and select Get Info from the menu. In the window that pops up, look under "Open with:" and make sure RStudio.app is selected. Afterwards, click the "Change All..." button and click Continue to have this take effect moving forward. 
+# B) Windows: The easiest option -- assuming you haven't tried double clicking on any R scripts yet -- is to open File Explorer, browse to an R script (e.g., rBootcamp-Unit1.R), and double click on it. A prompt should appear asking you "How do you want to open this file?" Select RStudio from the list, make sure "Always use this app to open .R files" is checked (the default), and click OK. You should be all set. Alternatively, if you find R is already set to open in a different app, you can still change the default app to RStudio manually. First, right click on the R script file, select Properties, and on the General tab, under "Opens with:", click the "Change..." button. Now you should see the prompt asking you "How do you want to open this file?" -- follow the steps described earlier to complete the process.
+
 # +++++++++++++++++++++++
 # THE RSTUDIO INTERFACE +
 # +++++++++++++++++++++++

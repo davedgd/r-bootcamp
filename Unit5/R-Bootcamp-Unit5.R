@@ -429,7 +429,12 @@ iris %>%
 
 # The result shows the means and standard deviations of petal length for each of the three species sorted from longest (i.e., virginica) to shortest (i.e., setosa).
 
-# When working with dplyr, commands involve steps/stages, which are separated by an operator known as the pipe (i.e., %>%). The command above pipes through the following steps:
+# When working with dplyr, commands involve a sequence of steps/stages, which are separated by an operator known as the pipe (i.e., %>% from tidyverse's magrittr or |> in base R version 4.1 and newer). The pipe takes the output from the left-hand of the operator and passes it to the call on the right as the first argument (see magrittr for more advanced pipes as well as the native pipe-bind operator, =>). For instance, the following two commands are identical:
+
+mean(c(1, 2, 3, NA), na.rm = TRUE)
+c(1, 2, 3) %>% mean(na.rm = TRUE)
+
+# In the earlier code chunk above involving iris, the pipes are used to sequentially work through the following steps:
 
 # 1) using the iris data set
 # 2) group the data set by the Species column

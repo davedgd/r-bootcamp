@@ -38,7 +38,7 @@ outersect <- function(x, y) {
 # Monty Hall Simulation Function
 # ------------------------------
 
-montyHall <- function(decision = "stay", iterations = 10000, seed = 123) {
+montyHall <- function(decision = "stay", iterations = 10000, seed = 123) { # note: alternatively, R 4.1 introduces a new shorthand notation for defining functions, i.e., \(decision = "stay", iterations = 10000, seed = 123)
   
   # set random seed (for replicability)
   set.seed(seed)

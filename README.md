@@ -48,14 +48,9 @@ No prior programming experience is necessary to benefit from this course.
 ### Misc ([Script](https://raw.githubusercontent.com/davedgd/r-bootcamp/master/Misc/R-Bootcamp-Misc-MontyHall.R?raw=true)/[HTML](http://htmlpreview.github.io/?https://github.com/davedgd/r-bootcamp/blob/master/Misc/HTML/R-Bootcamp-Misc-MontyHall.html)):
 -	Monty Hall: A Simulation-Based Example of How to Write a Function
 ### To-Do (Work-in-Progress):
-- Add new `|>` pipe and `\(x)` function shorthand from R 4.1.0
 - Add more (i.e., beyond Misc) on control-flow constructs (i.e., ?Control; if/else, for/while/repeat loops, etc.)
 - Debugging
 - Python integration via reticulate
 - Add basic string search/regular expressions
-- Break down the first ggplot call in Unit 6 into basic components (e.g., aes, geom, etc.)
-- Add a discussion of different geom stat options to Unit 6 (e.g., stat = "identity", stat = "count", stat = "summary")
 - Flesh out dplyr discussion and explain chaining more clearly (more generally, spend more time on tidyverse?)
-- Add some examples showing why lubridate/anytime are preferable to base
 - Discuss performance optimization (e.g., BLAS/LAPACK; parallel processing)
-- Add a note on how to change file association from R GUI to RStudio (Unit 1) for Windows/macOS

@@ -153,7 +153,7 @@ recode(exampleFactor, "A" = "OutcomeA", "B" = "OutcomeB") # the dplyr variant of
 
 # Again, the two Windows examples above (i.e., options A and B) are identical and thus are interchangeable. Ultimately, as long as the path you specify is correct and valid, it is irrelevant how you decide to write it.
 
-# What is not irrelevant however is the need to include both the file name and extension when referring to a file location in R. File Explorer on Windows or Finder on Mac can be used to find files you are looking for, although to see the extension you may have to adjust some options in the respective program:
+# What is not irrelevant however is the need to include both the file name and extension when referring to a file location in R. Finder on Mac or File Explorer on Windows can be used to find files you are looking for, although to see the extension you may have to adjust some options in the respective program:
 
 # A) Finder (Mac): Finder -> Preferences -> Advanced Tab -> Check "Show all filename extensions"
 # B) File Explorer (Windows 10): View Tab -> Options Button -> View Tab -> Uncheck "Hide extensions for known file types"
