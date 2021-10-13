@@ -419,7 +419,12 @@ iris[iris$Species %in% c("setosa", "virginica") & iris$Sepal.Length > 7.5,] # 6 
 
 library(dplyr)
 
-# Once dplyr is loaded, suppose we wanted to calculate means and SDs for the petal length and petal width columns of iris for each of the species in the data.frame. To do this, we could use the following command:
+# Once dplyr is loaded, we typically use it to define a data manipulation problem as a sequence of steps/stages, which are separated by an operator known as the pipe (i.e., %>% from tidyverse's magrittr or |> in base R version 4.1 and newer). The pipe takes the output from the left-hand of the operator and passes it to the call on the right as the first argument (see magrittr for more advanced pipes as well as the native pipe-bind operator, =>). For instance, the following two commands are identical:
+
+c(1, NA, 3) %>% mean(na.rm = TRUE)
+mean(c(1, NA, 3), na.rm = TRUE)
+
+# A more realistic use of dplyr might be the following: Suppose we wanted to calculate means and SDs for the petal length and petal width columns of iris for each of the species in the data.frame. To do this, we could use the following command:
 
 iris %>% 
   group_by(Species) %>% 
@@ -428,11 +433,6 @@ iris %>%
   arrange(desc(mean_petal_length))
 
 # The result shows the means and standard deviations of petal length for each of the three species sorted from longest (i.e., virginica) to shortest (i.e., setosa).
-
-# When working with dplyr, commands involve a sequence of steps/stages, which are separated by an operator known as the pipe (i.e., %>% from tidyverse's magrittr or |> in base R version 4.1 and newer). The pipe takes the output from the left-hand of the operator and passes it to the call on the right as the first argument (see magrittr for more advanced pipes as well as the native pipe-bind operator, =>). For instance, the following two commands are identical:
-
-mean(c(1, 2, 3, NA), na.rm = TRUE)
-c(1, 2, 3) %>% mean(na.rm = TRUE)
 
 # In the earlier code chunk above involving iris, the pipes are used to sequentially work through the following steps:
 
